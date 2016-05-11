@@ -1,0 +1,6 @@
+/Admin
+/Hidden
+*.~lyx
+*.lyx~
+*.lyx#
+.DS_Store
