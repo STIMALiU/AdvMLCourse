@@ -1,0 +1,2537 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+732A96
+\end_layout
+
+\end_inset
+
+Advanced Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Gaussian processes
+\begin_inset Newline newline
+\end_inset
+
+Lecture 1
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Topic overview
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lecture 1
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Recall: 
+\series bold
+\color blue
+The multivariate normal distribution
+\end_layout
+
+\begin_layout Itemize
+Recall: Bayesian inference for 
+\series bold
+\color blue
+Gaussian
+\series default
+ 
+\series bold
+linear
+\series default
+\color inherit
+/
+\series bold
+\color blue
+nonlinear regression
+\end_layout
+
+\begin_layout Itemize
+Introduction to 
+\series bold
+\color blue
+Gaussian Process Regression
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lecture 2
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+More on kernel functions
+\end_layout
+
+\begin_layout Itemize
+Estimating the 
+\series bold
+\color blue
+GP hyperparameters
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Large scale GPs
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lecture 3
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Gaussian Process Classification
+\end_layout
+
+\begin_layout Itemize
+Some examples of 
+\series bold
+\color blue
+GP applications
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The multivariate normal distribution
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+density function
+\series default
+ of a 
+\begin_inset Formula $p$
+\end_inset
+
+-variate normal vector 
+\begin_inset Formula $\mathbf{x}\sim N(\mu,\Sigma)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+f(\mathbf{x})=\left(\frac{1}{2\pi}\right)^{p/2}\frac{1}{\sqrt{\det\Sigma}}\exp\left\{ -\frac{1}{2}(\mathbf{x}-\mu)'\Sigma^{-1}(\mathbf{x}-\mu)\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example: 
+\series bold
+\color blue
+Bivariate normal
+\color inherit
+ 
+\begin_inset Formula $(p=2)$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula 
+\[
+\text{\Sigma}=\left(\begin{array}{cc}
+\sigma_{1}^{2} & \rho\sigma_{1}\sigma_{2}\\
+\rho\sigma_{1}\sigma_{2} & \sigma_{2}^{2}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Mean and variance
+\begin_inset Formula 
+\[
+E(\mathbf{x})=\mu\quad Var(\mathbf{x})=\Sigma
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multivariate normal
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename Graphics/BivariateNormalSurf.png
+	lyxscale 30
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Multivariate normal
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename Graphics/BivariateNormalContours.png
+	lyxscale 30
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The multivariate normal distribution, cont.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $\mathbf{x}=\left(\begin{array}{c}
+\mathbf{x}_{1}\\
+\mathbf{x}_{2}
+\end{array}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathbf{x}_{1}$
+\end_inset
+
+ is 
+\begin_inset Formula $p_{1}\times1$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{x}_{2}$
+\end_inset
+
+ is 
+\begin_inset Formula $p_{2}\times1$
+\end_inset
+
+ (
+\begin_inset Formula $p_{1}+p_{2}=p$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Partition 
+\begin_inset Formula $\mu$
+\end_inset
+
+ and 
+\begin_inset Formula $\Sigma$
+\end_inset
+
+ accordingly as 
+\begin_inset Formula 
+\[
+\mu=\left(\begin{array}{c}
+\mu_{1}\\
+\mu_{2}
+\end{array}\right)\text{ and }\Sigma=\left(\begin{array}{cc}
+\Sigma_{11} & \Sigma_{12}\\
+\Sigma_{21} & \Sigma_{22}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Marginals are normal
+\series default
+.
+ Let 
+\begin_inset Formula $\mathbf{x}\sim N(\mu,\Sigma)$
+\end_inset
+
+, then
+\begin_inset Formula 
+\[
+\mathbf{x}_{1}\sim N(\mu_{1},\Sigma_{11})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Conditionals are normal
+\series default
+.
+ Let 
+\begin_inset Formula $\mathbf{x}\sim N(\mu,\Sigma)$
+\end_inset
+
+, then
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbf{x}_{1}|\mathbf{x}_{2}=\mathbf{x}_{2}^{*}\sim N\left[\mu_{1}+\Sigma_{12}\Sigma_{22}^{-1}(x_{2}^{*}-\mu_{2}),\;\Sigma_{11}-\Sigma_{12}\Sigma_{22}^{-1}\Sigma_{21}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear regression
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Linear regression
+\series default
+\color inherit
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size tiny
+\color black
+I follow the notation in RW rather than PRML.
+ In PRML: 
+\begin_inset Formula $y$
+\end_inset
+
+ is the noise-free response.
+ 
+\begin_inset Formula $t=y+\epsilon$
+\end_inset
+
+ is the response with noise.
+ 
+\begin_inset Formula $\beta^{-1}$
+\end_inset
+
+ is the noise variance (
+\begin_inset Formula $\sigma_{n}^{2}$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y=f(\mathbf{x})+\epsilon
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f(\mathbf{x})=\mathbf{w}^{T}\cdot\mathbf{x}
+\]
+
+\end_inset
+
+and 
+\begin_inset Formula $\epsilon\sim N(0,\sigma_{n}^{2})$
+\end_inset
+
+ and iid over observations.
+\end_layout
+
+\begin_layout Itemize
+The weights 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathbf{w}$
+\end_inset
+
+ are called regression coefficients (
+\begin_inset Formula $\beta$
+\end_inset
+
+) in statistics.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Polynomial
+\series default
+ 
+\series bold
+regression
+\series default
+\color inherit
+: 
+\begin_inset Formula $\phi\mathbf{(x)}=(1,x,x^{2},x^{3},...,x^{k})$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+f(\mathbf{x})=\mathbf{w}^{T}\phi\mathbf{(x)}\cdot
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+More generally: 
+\series bold
+\color blue
+splines
+\series default
+\color inherit
+ with 
+\series bold
+\color blue
+basis functions
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+Polynomial and spline models are linear in 
+\begin_inset Formula $\mathbf{w}$
+\end_inset
+
+.
+ Least squares!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Bayesian linear regression - inference
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Linear regression for all 
+\begin_inset Formula $n$
+\end_inset
+
+ observations
+\begin_inset Formula 
+\[
+\underset{n\times1}{\mathbf{y}}=\underset{n\times p}{\mathbf{X}}\underset{p\times1}{\mathbf{w}}+\underset{n\times1}{\varepsilon}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{w}$
+\end_inset
+
+ is unknown.
+ 
+\begin_inset Formula $\sigma_{n}$
+\end_inset
+
+ is assumed known.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prior
+\series default
+\color inherit
+ 
+\begin_inset Formula 
+\[
+\mathbf{w}\sim N\left(0,\Sigma_{p}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Common choice (Ridge regression): 
+\begin_inset Formula $\Sigma_{p}=\alpha^{-1}\mathbf{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Posterior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{w}|\mathbf{X}\textnormal{,}\mathbf{y} & \sim N\left(\bar{\mathbf{w}},\mathbf{A}^{-1}\right)\\
+\mathbf{A} & =\sigma_{n}^{-2}\mathbf{X}^{T}\mathbf{X}+\Sigma_{p}^{-1}\\
+\bar{\mathbf{w}} & =\left(\mathbf{X}^{T}\mathbf{X}+\sigma_{n}^{2}\Sigma_{p}^{-1}\right)^{-1}\mathbf{X}^{T}\mathbf{y}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Recall: 
+\series bold
+\color blue
+Posterior precision = Data Precision + Prior Precision
+\series default
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A prior on 
+\begin_inset Formula $\mathbf{w}$
+\end_inset
+
+ is a prior on functions
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/PolynomialPrior.png
+	lyxscale 30
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Non-parametric regression
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Non-parametric regression
+\series default
+\color inherit
+: avoiding a parametric form for 
+\begin_inset Formula $f(\cdot)$
+\end_inset
+
+.
+ Treat 
+\begin_inset Formula $f(\mathbf{x})$
+\end_inset
+
+ as an unknown parameter for every 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Weight space
+\color inherit
+ view
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Restrict attention to a grid of (ordered) 
+\begin_inset Formula $x$
+\end_inset
+
+-values: 
+\begin_inset Formula $x_{1},x_{2},..,x_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Put a joint prior on the 
+\begin_inset Formula $k$
+\end_inset
+
+ function values: 
+\begin_inset Formula $f(x_{1}),f(x_{2}),...,f(x_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Function space 
+\color inherit
+view
+\series default
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Treat 
+\begin_inset Formula $f$
+\end_inset
+
+ as an 
+\series bold
+unknown
+\series default
+ 
+\series bold
+function
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Put a 
+\series bold
+prior over a set of functions
+\series default
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonparametric = one parameter for every x!
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/OneParameterAtEveryPoint.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian process regression
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Weight-space view.
+ GP assumes
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+f(x_{1})\\
+\vdots\\
+f(x_{k})
+\end{array}\right)\sim N\left(\mathbf{m},\mathbf{K}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But how do we specify the 
+\begin_inset Formula $k\times k$
+\end_inset
+
+ 
+\series bold
+covariance matrix
+\series default
+ 
+\begin_inset Formula $\mathbf{K}$
+\end_inset
+
+?
+\begin_inset Formula 
+\[
+Cov\left(f(x_{p}),f(x_{q})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Squared exponential
+\color inherit
+ 
+\color red
+covariance function
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+Cov\left(f(x_{p}),f(x_{q})\right)=k(x_{p},x_{q})=\sigma_{f}^{2}\exp\left(-\frac{1}{2}\left(x_{p}-x_{q}\right)^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Nearby 
+\begin_inset Formula $x$
+\end_inset
+
+'s have highly correlated function ordinates 
+\begin_inset Formula $f(x)$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+.
+\end_layout
+
+\begin_layout Itemize
+We can compute 
+\begin_inset Formula $Cov\left(f(x_{p}),f(x_{q})\right)$
+\end_inset
+
+ for 
+\emph on
+any
+\emph default
+ 
+\begin_inset Formula $x_{p}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Extension to multiple covariates: 
+\begin_inset Formula $\left(x_{p}-x_{q}\right)^{2}$
+\end_inset
+
+ replaced by 
+\begin_inset Formula $(\mathbf{x}_{p}-\mathbf{x}_{q})^{T}(\mathbf{x}_{p}-\mathbf{x}_{q})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Smooth function - points nearby
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/GPSmoothNearby.png
+	lyxscale 20
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Smooth function - points far apart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/GPSmoothDistant.png
+	lyxscale 20
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Jagged function - points nearby
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/GPJaggedNearby.png
+	lyxscale 20
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Jagged function - points far apart
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/GPJaggedDistant.png
+	lyxscale 20
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian process regression, cont.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Definition
+A 
+\series bold
+\color blue
+Gaussian process
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+GP
+\series default
+\color inherit
+) is a collection of random variables, any finite number of which have a
+ multivariate Gaussian distribution.
+\end_layout
+
+\begin_layout Itemize
+A Gaussian process is really a 
+\series bold
+probability distribution 
+\color blue
+over functions
+\series default
+\color inherit
+ (curves).
+\end_layout
+
+\begin_layout Itemize
+A GP is completely specified by a 
+\series bold
+mean
+\series default
+ and a 
+\series bold
+covariance function
+\series default
+
+\begin_inset Formula 
+\[
+m(x)=\mathrm{E}\left[f(x)\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+k(x,x')=E\left[\left(f(x)-m(x)\right)\left(f(x')-m(x')\right)\right]
+\]
+
+\end_inset
+
+for any two inputs 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $x'$
+\end_inset
+
+ (note: this is 
+\emph on
+not
+\emph default
+ the transpose here).
+\end_layout
+
+\begin_layout Itemize
+A 
+\series bold
+\color blue
+Gaussian process
+\series default
+\color inherit
+ is denoted by
+\begin_inset Formula 
+\[
+f(x)\sim GP\left(m(x),k(x,x')\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian
+\series default
+\color inherit
+: 
+\begin_inset Formula $f(x)\sim GP$
+\end_inset
+
+ encodes 
+\series bold
+\color blue
+prior beliefs
+\series default
+\color inherit
+ about the unknown 
+\begin_inset Formula $f(\cdot)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulating a GP 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Example:
+\begin_inset Formula 
+\begin{align*}
+m(x) & =\sin(10x)\\
+k(x,x') & =\sigma_{f}^{2}\exp\left(-\frac{1}{2}\left(\frac{x-x'}{\ell}\right)^{2}\right)
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\ell>0$
+\end_inset
+
+ is the length scale.
+ 
+\end_layout
+
+\begin_layout Itemize
+Larger 
+\begin_inset Formula $\ell$
+\end_inset
+
+ gives more smoothness in 
+\begin_inset Formula $f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Simulate draw from 
+\begin_inset Formula $f(x)\sim GP\left(m(x),k(x,x')\right)$
+\end_inset
+
+ over a grid 
+\begin_inset Formula $\mathbf{x}_{*}=(x_{1},...,x_{n})$
+\end_inset
+
+ by using that
+\begin_inset Formula 
+\[
+f(\mathbf{x}_{*})\sim N\left(m(\mathbf{x}_{*}),K(\mathbf{x}_{*},\mathbf{x}_{*})\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note that the 
+\series bold
+kernel
+\series default
+ 
+\begin_inset Formula $k(x,x')$
+\end_inset
+
+ produces a 
+\series bold
+covariance
+\series default
+ 
+\series bold
+matrix
+\series default
+ 
+\begin_inset Formula $K(\mathbf{x}_{*},\mathbf{x}_{*})$
+\end_inset
+
+ when evaluated at the vector 
+\begin_inset Formula $\mathbf{x}_{*}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulating a GP 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/SimulateGP.png
+	lyxscale 20
+	scale 53
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Three commonly used covariance kernels
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Let 
+\begin_inset Formula $r=\left\Vert x-x'\right\Vert $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Squared exponential
+\color inherit
+ 
+\series default
+(
+\series bold
+\color blue
+SE
+\series default
+\color inherit
+) (
+\begin_inset Formula $\ell>0$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{f}>0$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+K_{SE}(r)=\sigma_{f}\exp\left(-\frac{r^{2}}{2\ell^{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Infinitely mean square differentiable.
+ Very smooth.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Rational Quadratic
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+RQ
+\series default
+\color inherit
+) (
+\begin_inset Formula $\ell>0$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{f}>0$
+\end_inset
+
+,
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+K_{RQ}(r)=\sigma_{f}\left(1+\frac{r^{2}}{2\alpha\ell^{2}}\right)^{-\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RQ is sum of SE with different 
+\begin_inset Formula $\ell$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $\alpha\rightarrow\infty$
+\end_inset
+
+, 
+\begin_inset Formula $K_{RQ}(r)\rightarrow K_{SE}(r)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Matérn
+\series default
+\color inherit
+ (
+\begin_inset Formula $\ell>0$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{f}>0$
+\end_inset
+
+, 
+\begin_inset Formula $\nu>0$
+\end_inset
+
+)
+\series bold
+
+\begin_inset Formula 
+\[
+K_{Matern}(r)=\sigma_{f}\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}r}{\ell}\right)^{\nu}K_{\nu}\left(\frac{\sqrt{2\nu}r}{\ell}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\nu=3/2$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu=5/2$
+\end_inset
+
+ common.
+ As 
+\begin_inset Formula $\nu\rightarrow\infty$
+\end_inset
+
+, 
+\begin_inset Formula $K_{Matern}(r)\rightarrow K_{SE}(r)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The length scale 
+\begin_inset Formula $\ell$
+\end_inset
+
+ determines the smoothness
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/RealizationsSEandMatern.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The scale factor 
+\begin_inset Formula $\sigma_{f}$
+\end_inset
+
+ determines the variance
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/RealizationsSEandMaternSigmaF.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The mean can be 
+\begin_inset Formula $sin(3x)$
+\end_inset
+
+.
+ Or whatever.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/RealizationsSEandMaternSineMean.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulating a GP
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The joint way: Choose a grid 
+\begin_inset Formula $x_{1},...,x_{k}$
+\end_inset
+
+.
+ Simulate the 
+\begin_inset Formula $k$
+\end_inset
+
+-vector
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+f(x_{1})\\
+\vdots\\
+f(x_{k})
+\end{array}\right)\sim N\left(\mathbf{m},\mathbf{K}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+More intuition from the conditional decomposition
+\begin_inset Formula 
+\begin{align*}
+p\left(f(x_{1}),f(x_{2}),....,f(x_{k})\right) & =p\left(f(x_{1})\right)p\left(f(x_{2})|f(x_{1})\right)\cdots\\
+ & \times p\left(f(x_{k})|f(x_{1}),...,f(x_{k-1})\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulation from 
+\begin_inset Formula $\ell$
+\end_inset
+
+=1 vs 
+\begin_inset Formula $\ell$
+\end_inset
+
+=0.2.
+ Before first draw.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll1_0.eps
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll02_0.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulation from 
+\begin_inset Formula $\ell$
+\end_inset
+
+=1 vs 
+\begin_inset Formula $\ell$
+\end_inset
+
+=0.2.
+ Before second draw.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll1_1.eps
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll02_1.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulation from 
+\begin_inset Formula $\ell$
+\end_inset
+
+=1 vs 
+\begin_inset Formula $\ell$
+\end_inset
+
+=0.2.
+ Before third draw.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll1_2.eps
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll02_2.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Simulation from 
+\begin_inset Formula $\ell$
+\end_inset
+
+=1 vs 
+\begin_inset Formula $\ell$
+\end_inset
+
+=0.2.
+ Before fourth draw.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll1_3.eps
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/ConditionalSimEll02_3.eps
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The posterior for a Gaussian Process Regression
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+y_{i}=f(\mathbf{\textnormal{x}}_{i})+\varepsilon_{i},\quad\varepsilon\overset{iid}{\sim}N(0,\sigma^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prior
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+f(x)\sim GP\left(0,k(x,x')\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+You have observed the data: 
+\begin_inset Formula $\mathbf{x}=(x_{1},...,x_{n})^{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{y}=(y_{1},...,y_{n})^{T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Goal: the posterior of 
+\begin_inset Formula $f(\cdot)$
+\end_inset
+
+ over a grid of 
+\begin_inset Formula $x$
+\end_inset
+
+-values: 
+\begin_inset Formula $\mathbf{f}_{*}=\mathbf{f}(\mathbf{x}_{*})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+posterior
+\series default
+\color inherit
+ (use formula for conditional Gaussian above) 
+\begin_inset Formula 
+\[
+\mathbf{f}_{*}|\mathbf{x},\mathbf{y},\mathbf{x}_{*}\sim N\left(\bar{\mathbf{f}}_{*},\mathrm{cov}(\mathbf{f}_{*})\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\bar{\mathbf{f}}_{*} & =K(\mathbf{x}_{*},\mathbf{x})\left[K(\mathbf{x},\mathbf{x})+\sigma^{2}I\right]^{-1}\mathbf{y}\\
+\mathrm{cov}(\mathbf{f}_{*}) & =K(\mathbf{x}_{*},\mathbf{x_{*}})-K(\mathbf{x}_{*},\mathbf{x})\left[K(\mathbf{x},\mathbf{x})+\sigma^{2}I\right]^{-1}K(\mathbf{x},\mathbf{x_{*}})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example - Canadian wages
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/CanadianWages.eps
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Posterior of f - 
+\begin_inset Formula $\ell=0.2,0.5,1,2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/CanadianIntervalsF.eps
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/CanadianIntervalsF_ell05.eps
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/CanadianIntervalsF_ell1.eps
+	scale 25
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/CanadianIntervalsF_ell2.eps
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Canadian wages - prediction with 
+\begin_inset Formula $\ell=0.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/CanadianIntervalsFandY_ell05.eps
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Python: GPy
+\end_layout
+
+\begin_layout Itemize
+Matlab: Statistics and Machine Learning Toolbox, GPML, GPstuff.
+\end_layout
+
+\begin_layout Itemize
+R: Kernlab, 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

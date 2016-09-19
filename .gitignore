@@ -1,5 +1,7 @@
 /Admin
 /Hidden
+/GaussianProcess/Lab/Hidden
+/StateSpace/Lab/Hidden
 *.~lyx
 *.lyx~
 *.lyx#
