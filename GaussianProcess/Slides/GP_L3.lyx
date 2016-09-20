@@ -1,0 +1,1865 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+732A96
+\end_layout
+
+\end_inset
+
+Advanced Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Gaussian processes
+\begin_inset Newline newline
+\end_inset
+
+Lecture 3
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lecture 3
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Gaussian Process Classification
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+More GP models
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Classification with logistic regression
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Classification
+\series default
+: 
+\series bold
+binary response
+\series default
+ 
+\begin_inset Formula $y\in\{-1,1\}$
+\end_inset
+
+ predicted by features 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example: linear logistic regression
+\begin_inset Formula 
+\[
+Pr(y=1|\mathbf{x})=\lambda(\mathbf{x}^{T}\mathbf{w})
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda(z)$
+\end_inset
+
+ is the logistic
+\series bold
+ link function
+\series default
+ 
+\begin_inset Formula 
+\[
+\lambda(z)=\frac{1}{1+\exp(-z)}
+\]
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda(z)$
+\end_inset
+
+ 'squashes' the linear prediction 
+\begin_inset Formula $\mathbf{x}^{T}\mathbf{w}\in\mathbb{R}$
+\end_inset
+
+ into 
+\begin_inset Formula $\lambda(\mathbf{x}^{T}\mathbf{w})\in[0,1]$
+\end_inset
+
+ .
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Logistic regression has 
+\series bold
+linear decision boundaries
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GP classification
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Obvious 
+\series bold
+GP extension
+\series default
+ of logistic regression: replace 
+\begin_inset Formula $\mathbf{x}^{T}\mathbf{w}$
+\end_inset
+
+ by 
+\begin_inset Formula $f(\mathbf{x})$
+\end_inset
+
+ where 
+\begin_inset Formula 
+\[
+f(\mathbf{x})\sim GP(0,k(\mathbf{x},\mathbf{x}'))
+\]
+
+\end_inset
+
+ and squash 
+\begin_inset Formula $f$
+\end_inset
+
+ through logistic function (or normal CDF)
+\begin_inset Formula 
+\[
+Pr(y=1|\mathbf{x})=\lambda(f(\mathbf{x}))
+\]
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Decision boundaries are now non-parametric (GP).
+ Flexible.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Squashing a linear function
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/SquashingLinear.png
+	lyxscale 30
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Squashing a GP function
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/SquashingGP.png
+	lyxscale 30
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+GP classification - inference
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prediction
+\series default
+\color inherit
+ for a test case 
+\begin_inset Formula $\mathbf{x}_{*}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Pr(y_{*}=+1|\mathbf{X},\mathbf{y},\mathbf{x}_{*})=\int\sigma(f_{*})p(f_{*}|\mathbf{x}_{*},\mathbf{X,y})df_{*}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma(f_{*})$
+\end_inset
+
+ is some sigmoidal function (logistic, normal CDF...) and 
+\begin_inset Formula $f_{*}$
+\end_inset
+
+ is the latent 
+\begin_inset Formula $f$
+\end_inset
+
+ at the test input 
+\begin_inset Formula $\mathbf{x}_{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The posterior distribution of 
+\begin_inset Formula $f_{*}$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+p(f_{*}|\mathbf{x}_{*},\mathbf{X},\mathbf{y})=\int p(f_{*}|\mathbf{X},\mathbf{x}_{*},\mathbf{f})p(\mathbf{f}|\mathbf{X},\mathbf{y})d\mathbf{f}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+p(\mathbf{f}|\mathbf{X},\mathbf{y})\propto p(\mathbf{y}|\mathbf{f})p(\mathbf{f}|\mathbf{X})
+\]
+
+\end_inset
+
+ is the posterior of 
+\begin_inset Formula $\mathbf{f}$
+\end_inset
+
+ from the training data.
+\end_layout
+
+\begin_layout Itemize
+Note that 
+\begin_inset Formula $p(\mathbf{y}|\mathbf{f})$
+\end_inset
+
+ is no longer Gaussian in classification problems.
+ Posterior 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p(\mathbf{f}|\mathbf{X},\mathbf{y})$
+\end_inset
+
+ is not analytically tractable.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Laplace approximation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Approximates 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p(\mathbf{f}|\mathbf{X},\mathbf{y})$
+\end_inset
+
+ with 
+\begin_inset Formula $N(\hat{\mathbf{f}},\mathbf{A}^{-1})$
+\end_inset
+
+, where 
+\begin_inset Formula $\hat{\mathbf{f}}$
+\end_inset
+
+ is the posterior mode and 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is the negative Hessian of the log posterior at 
+\begin_inset Formula $\mathbf{f}=\hat{\mathbf{f}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The log posterior is (proportional to)
+\begin_inset Formula 
+\begin{align*}
+\Psi(\mathbf{f}) & =\text{\log}p(\mathbf{y}|\mathbf{f})+\log p(\mathbf{f}|\mathbf{X})\\
+ & =\text{\log}p(\mathbf{y}|\mathbf{f})-\frac{1}{2}\mathbf{f}^{T}K^{-1}\mathbf{f}-\frac{1}{2}\log\left|K\right|-\frac{n}{2}\log2\pi
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Differentiating wrt 
+\begin_inset Formula $\mathbf{f}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\nabla\Psi(\mathbf{f}) & =\nabla\log p(\mathbf{y}|\mathbf{f})-K^{-1}\mathbf{f}\\
+\nabla\nabla\Psi(\mathbf{f}) & =\nabla\nabla\log p(\mathbf{y}|\mathbf{f})-K^{-1}=-W-K^{-1}
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $W$
+\end_inset
+
+ is a diagonal matrix since each 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ only depends on its 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Use 
+\series bold
+Newton's method
+\series default
+ to iterate to the mode.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Approximate predictions 
+\series default
+of 
+\begin_inset Formula $f_{*}$
+\end_inset
+
+ are 
+\series bold
+possible
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Predictions of 
+\begin_inset Formula $y_{*}$
+\end_inset
+
+ require one-dimensional numerical integration.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Markov Chain Monte Carlo
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Metropolis-Hastings (or Hamiltonian MC) to 
+\series bold
+\color blue
+sample from training posterior 
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\mathbf{f}\vert\mathbf{x},\mathbf{y},\theta
+\]
+
+\end_inset
+
+Produces 
+\begin_inset Formula $\mathbf{f}^{(1)},...,\mathbf{f}^{(N)}$
+\end_inset
+
+ draws.
+\end_layout
+
+\begin_layout Itemize
+For each 
+\begin_inset Formula $\mathbf{f}^{(i)}$
+\end_inset
+
+, 
+\series bold
+\color blue
+sample the test posterior
+\series default
+\color inherit
+ 
+\begin_inset Formula $\mathbf{f}_{*}$
+\end_inset
+
+ from 
+\begin_inset Formula 
+\[
+\mathbf{f}_{*}\vert\mathbf{f}^{(i)},\mathbf{x},\mathbf{x}_{*}\sim N\left(K(\mathbf{x}_{*},\mathbf{x})K(\mathbf{x},\mathbf{x})^{-1}\mathbf{f}^{(i)},K(\mathbf{x}_{*},\mathbf{x_{*}})-K(\mathbf{x}_{*},\mathbf{x})K(\mathbf{x},\mathbf{x})^{-1}K(\mathbf{x},\mathbf{x_{*}})\right)
+\]
+
+\end_inset
+
+Note that this does not depend on 
+\begin_inset Formula $\mathbf{y}$
+\end_inset
+
+ since we condition on 
+\begin_inset Formula $\mathbf{f}$
+\end_inset
+
+.
+ Noise-free GP fit.
+ Produces 
+\begin_inset Formula $\mathbf{f}_{*}^{(1)},...,\mathbf{f}_{*}^{(N)}$
+\end_inset
+
+ draws.
+\end_layout
+
+\begin_layout Itemize
+For each 
+\begin_inset Formula $\mathbf{f}_{*}^{(i)}$
+\end_inset
+
+, 
+\series bold
+\color blue
+sample a prediction
+\series default
+\color inherit
+ from
+\begin_inset Formula 
+\[
+p(\mathbf{y}_{*}\vert\mathbf{f}_{*}^{(i)},\theta).
+\]
+
+\end_inset
+
+Produces a draws from the predictive distribution 
+\begin_inset Formula $p(\mathbf{y}_{*}\vert\mathbf{x}_{*},\mathbf{x},\mathbf{y},\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Straightforward (at least in principle) to also 
+\series bold
+\color blue
+sample the hyperparameters
+\series default
+\color inherit
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Slice sampling.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iris data - sepal - SE kernel with ARD
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/sepalData.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Laplace: 
+\begin_inset Formula $\hat{\ell}_{1}=1.7214,\hat{\ell}_{2}=185.5040,\sigma_{f}=1.4361$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+EP: 
+\begin_inset Formula $\hat{\ell}_{1}=1.7189,\hat{\ell}_{2}=55.5003,\sigma_{f}=1.4343$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/sepalMinHypLaplace.eps
+	scale 22
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/sepalMinHypEP.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iris data - petal - SE kernel with ARD
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/petalData.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Laplace: 
+\begin_inset Formula $\hat{\ell}_{1}=1.7606,\hat{\ell}_{2}=0.8804,\sigma_{f}=4.9129$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+EP: 
+\begin_inset Formula $\hat{\ell}_{1}=2.1139,\hat{\ell}_{2}=1.0720,\sigma_{f}=5.3369$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/petalMinHypLaplace.eps
+	scale 22
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/petalMinHypEP.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iris data - petal - all three classes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/SetosaProb.png
+	lyxscale 40
+	scale 26
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iris data - petal - all three classes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/VersicolorPred.png
+	lyxscale 40
+	scale 26
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iris data - petal - all three classes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/Virginica.png
+	lyxscale 40
+	scale 26
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iris data - petal - decision boundaries
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DecisionBoundaryPetal.png
+	lyxscale 40
+	scale 26
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Toy data 1 - SE kernel with ARD
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DataSet1.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+EP: 
+\begin_inset Formula $\hat{\ell}_{1}=2.4503,\hat{\ell}_{2}=721.7405,\sigma_{f}=4.7540$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DataSet1MinHypLaplace.eps
+	scale 22
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/DataSet1MinHypEP.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Toy data 2 - SE kernel with ARD
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DataSet2.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+EP: 
+\begin_inset Formula $\hat{\ell}_{1}=8.3831,\hat{\ell}_{2}=1.9587,\sigma_{f}=4.5483$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DataSet2MinHypLaplace.eps
+	scale 22
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/DataSet2MinHypEP.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Toy data 3 - SE kernel with ARD
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DataSet3.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Laplace: 
+\begin_inset Formula $\hat{\ell}_{1}=0.7726,\hat{\ell}_{2}=0.6974,\sigma_{f}=11.7854$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+EP:
+\begin_inset Formula $\hat{\ell}_{1}=1.2685,\hat{\ell}_{2}=1.0941,\sigma_{f}=17.2774$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DataSet3MinHypLaplace.eps
+	scale 22
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/DataSet3MinHypEP.eps
+	scale 22
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Gaussian Process Optimization (GPO)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Aim
+\series default
+: minimization of 
+\series bold
+expensive
+\series default
+ function 
+\begin_inset Formula 
+\[
+\mathrm{\mathrm{argmin}_{\mathbf{x}\in\mathcal{X}}}f(\mathbf{x})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Typical applications: 
+\series bold
+hyperparameter estimation
+\series default
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+GPO
+\color inherit
+ idea
+\series default
+:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assign GP prior to the unknown function 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Evaluate the function at some values 
+\begin_inset Formula $x_{1},x_{2},...,x_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Update to posterior 
+\begin_inset Formula $f|x_{1},...,x_{n}\sim GP(\mu,K)$
+\end_inset
+
+.
+ Noise-free model.
+\end_layout
+
+\begin_layout Itemize
+Use the GP posterior of 
+\begin_inset Formula $f$
+\end_inset
+
+ to find a new evaluation point 
+\begin_inset Formula $x_{n+1}$
+\end_inset
+
+.
+ 
+\series bold
+\color blue
+Explore
+\color inherit
+ 
+\series default
+vs
+\series bold
+ 
+\color blue
+Exploit
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+Iterate until the change in optimum is lower that some tolerance.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Bayesian Optimization
+\series default
+\color inherit
+.
+ Bayesian Numerics.
+ Probabilistic numerics.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Explore-Exploit Illustration 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename ../../../Melbourne2016/Slides/Graphics/GPOIlustration.pdf
+	scale 500
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Acquisition functions
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Probability of Improvement
+\color inherit
+ 
+\series default
+(
+\series bold
+PI
+\series default
+)
+\begin_inset Formula 
+\[
+a_{PI}\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)\equiv\mathrm{Pr}\left(f(\mathbf{x})<f(\mathbf{x}_{best})\right)=\Phi(\gamma(\mathbf{x}))
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\gamma(\mathbf{x})=\frac{f(\mathbf{x}_{best})-\mu\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)}{\sigma\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Expected Improvement
+\series default
+\color inherit
+ (
+\series bold
+EI
+\series default
+)
+\begin_inset Formula 
+\[
+a_{EI}\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)=\sigma\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)\left[\gamma(\mathbf{x})\Phi(\gamma(\mathbf{x}))+\mathcal{N}\left(\gamma(\mathbf{x});0,1\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Lower Confidence Bound
+\series default
+\color inherit
+ (
+\series bold
+LCB
+\series default
+)
+\begin_inset Formula 
+\[
+a_{EI}\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)=\mu\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)-\kappa\cdot\sigma\left(\mathbf{x};\{\mathbf{x}_{n},y_{n}\},\theta\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note: need to maximize the acquisition function to choose 
+\begin_inset Formula $\mathbf{x}_{next}$
+\end_inset
+
+.
+ Non-convex, but cheaper and simpler than original problem.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Acquisition functions from Brochu et al 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/BrochuGPOAquisitionExamplesUCB.pdf
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ConvNets - Snoek et al (NIPS, 2012) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/GPO4ConvNets.pdf
+	scale 170
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More GP models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Heteroscedastic GP regression
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+y=f(x)+\exp\left[g(x)\right]\epsilon
+\]
+
+\end_inset
+
+so where 
+\begin_inset Formula $f\sim GP\left[m_{f}(x),k_{f}(x,x^{'})\right]$
+\end_inset
+
+ independently of 
+\begin_inset Formula $g\sim GP\left[m_{g}(x),k_{g}(x,x^{'})\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+GP for 
+\series bold
+\color blue
+density estimation
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(x)=\frac{\exp\left[f(x)\right]}{\int_{\mathbb{R}}\exp\left[f(t)\right]dt}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $f\sim GP\left[m(x),k(x,x^{'})\right]$
+\end_inset
+
+.
+ Appealing mean function: 
+\begin_inset Formula $m(x)=-\frac{1}{2\theta_{2}}(x-\theta_{1})^{2}$
+\end_inset
+
+ [i.e.
+ best guess is a normal density].
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Shared latent GP
+\series default
+\color inherit
+ for 
+\series bold
+dependent multivariate data
+\series default
+ (
+\begin_inset Formula $k\ll p$
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+\left(\begin{array}{c}
+y_{1}(\mathbf{x})\\
+\vdots\\
+y_{p}(\mathbf{x})
+\end{array}\right)=\underset{p\times k}{\mathbf{L}}\left(\begin{array}{c}
+f_{1}(\mathbf{x})\\
+\vdots\\
+f_{k}(\mathbf{x})
+\end{array}\right)+\left(\begin{array}{c}
+g_{1}(\mathbf{x})\\
+\vdots\\
+g_{p}(\mathbf{x})
+\end{array}\right)+\left(\begin{array}{c}
+\epsilon_{1}\\
+\vdots\\
+\epsilon_{p}
+\end{array}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

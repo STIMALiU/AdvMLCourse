@@ -1698,7 +1698,7 @@ SE
 )
 \begin_inset Formula 
 \[
-K_{SE}(r)=\sigma_{f}\exp\left(-\frac{r^{2}}{2\ell^{2}}\right)
+K_{SE}(r)=\sigma_{f}^{2}\exp\left(-\frac{r^{2}}{2\ell^{2}}\right)
 \]
 
 \end_inset
@@ -1741,7 +1741,7 @@ RQ
 )
 \begin_inset Formula 
 \[
-K_{RQ}(r)=\sigma_{f}\left(1+\frac{r^{2}}{2\alpha\ell^{2}}\right)^{-\alpha}
+K_{RQ}(r)=\sigma_{f}^{2}\left(1+\frac{r^{2}}{2\alpha\ell^{2}}\right)^{-\alpha}
 \]
 
 \end_inset
@@ -1792,7 +1792,7 @@ Matérn
 
 \begin_inset Formula 
 \[
-K_{Matern}(r)=\sigma_{f}\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}r}{\ell}\right)^{\nu}K_{\nu}\left(\frac{\sqrt{2\nu}r}{\ell}\right)
+K_{Matern}(r)=\sigma_{f}^{2}\frac{2^{1-\nu}}{\Gamma(\nu)}\left(\frac{\sqrt{2\nu}r}{\ell}\right)^{\nu}K_{\nu}\left(\frac{\sqrt{2\nu}r}{\ell}\right)
 \]
 
 \end_inset

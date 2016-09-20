@@ -105,7 +105,7 @@ points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green"
 
 # Plotting the decision boundaries
 meanPred <- matrix(max.col(probPreds),100)
-plot(gridPoints,  pch=".", cex=2, col=ifelse(meanPred==1, "red", ifelse(meanPred==2, "green", "blue")))
-points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red", cex=5)
-points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue", cex=5)
-points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green", cex=5)
+plot(gridPoints,  pch=".", cex=3, col=ifelse(meanPred==1, "red", ifelse(meanPred==2, "green", "blue")))
+points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red", cex=10, pch=".")
+points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue",  cex=10, pch=".")
+points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green",  cex=10, pch=".")

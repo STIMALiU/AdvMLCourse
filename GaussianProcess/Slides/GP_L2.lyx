@@ -1,0 +1,1339 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+732A96
+\end_layout
+
+\end_inset
+
+Advanced Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Gaussian processes
+\begin_inset Newline newline
+\end_inset
+
+Lecture 2
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lecture 2
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Estimating the 
+\series bold
+\color blue
+GP hyperparameters
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color black
+More on 
+\series bold
+\color blue
+kernel functions
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Large scale GPs
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Estimating the hyperparameters
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kernel depends on 
+\series bold
+\color blue
+hyperparameters
+\series default
+\color inherit
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+.
+ Example SE kernel [
+\begin_inset Formula $\theta=(\sigma_{f},\ell)^{T}$
+\end_inset
+
+]
+\begin_inset Formula 
+\[
+k(\mathbf{x},\mathbf{x}')=\sigma_{f}^{2}\exp\left(-\frac{1}{2}\frac{\left\Vert \mathbf{x}-\mathbf{x}'\right\Vert ^{2}}{\ell^{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Common approach: choose the hyperparameters that maximizes the 
+\series bold
+\color blue
+marginal likelihood
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+evidence
+\series default
+\color inherit
+):
+\begin_inset Formula 
+\[
+p(\mathbf{y}|\mathbf{X},\theta)=\int p(\mathbf{y}|\mathbf{X},\mathbf{f},\theta)p(\mathbf{f}|\mathbf{X},\theta)d\mathbf{f}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{f}=f(\mathbf{X})$
+\end_inset
+
+ is a vector with function values in the training data.
+\end_layout
+
+\begin_layout Itemize
+For Gaussian process regression:
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\[
+\log p(\mathbf{y}|\mathbf{X},\theta)=-\frac{1}{2}\mathbf{y}^{T}\left(K+\sigma_{n}^{2}I\right)^{-1}\mathbf{y}-\frac{1}{2}\log\left|K+\sigma_{n}^{2}I\right|-\frac{n}{2}\log(2\pi)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Proper 
+\series bold
+\color blue
+Bayesian inference
+\color inherit
+ for hyperparameters
+\series default
+
+\begin_inset Formula 
+\[
+p(\theta|\mathbf{y},\mathbf{X})\propto p(\mathbf{y}|\mathbf{X},\theta)p(\theta).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Canadian wages - LML determination of 
+\begin_inset Formula $\ell$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/NegativeLML_ell.eps
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Graphics/NegativeLML_ellZoom.eps
+	scale 35
+
+\end_inset
+
+
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More than one input - ARD
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Anisotropic version of isotropic kernels by setting 
+\begin_inset Formula $r^{2}(\mathbf{x},\mathbf{x}')=(\mathbf{x}-\mathbf{x}')^{T}\mathbf{M}(\mathbf{x}-\mathbf{x}')$
+\end_inset
+
+ where 
+\begin_inset Formula $\mathbf{M}$
+\end_inset
+
+ is positive definite.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Automatic Relevance Determination
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+ARD
+\series default
+\color inherit
+): 
+\begin_inset Formula $\mathbf{M}=Diag(\ell_{1}^{-2},...,\ell_{D}^{-2})$
+\end_inset
+
+ is diagonal with different length scales.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+ARD does 'variable selection' since large 
+\begin_inset Formula $\ell_{j}$
+\end_inset
+
+ means that the 
+\begin_inset Formula $j$
+\end_inset
+
+th input essentially drops out of 
+\begin_inset Formula $f(\mathbf{x})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+More on kernels
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Periodic kernels
+\series default
+\color inherit
+.
+ When 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ is believed to be periodic with period 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ Example: 
+\begin_inset Formula 
+\[
+k(x,x^{\prime})=\sigma_{f}^{2}\exp\left(-\frac{2\sin^{2}\left(\pi\left|x-x^{\prime}\right|^{2}/d\right)}{\ell^{2}}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Factor kernels
+\series default
+\color inherit
+: 
+\begin_inset Formula $M=\Lambda\Lambda^{T}+\Psi$
+\end_inset
+
+, where 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ is 
+\begin_inset Formula $D\times k$
+\end_inset
+
+ for low rank 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Length-scales 
+\begin_inset Formula $\ell(\mathbf{x})$
+\end_inset
+
+ that vary with 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+.
+ 
+\series bold
+\color blue
+Gibbs kernel
+\series default
+\color inherit
+ in RW Eq.
+ 4.32.
+ 
+\series bold
+\color blue
+Adaptive smoothness
+\series default
+\color inherit
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Product of kernels
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kernels are often combined into 
+\series bold
+\color blue
+composite kernels
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Product
+\series default
+ of kernels is a kernel.
+ 
+\end_layout
+
+\begin_layout Itemize
+Example: Product of periodic and square exponential kernels.
+ Locally periodic.
+ Two nearby peaks are more dependent than two distant peaks.
+\begin_inset Formula 
+\[
+k(x,x^{\prime})=\sigma_{f}^{2}\exp\left(-\frac{2\sin^{2}\left(\pi\left|x-x^{\prime}\right|^{2}/d\right)}{\ell^{2}}\right)\times\exp\left(-\frac{1}{2}\frac{\left|x-x^{\prime}\right|^{2}}{\ell^{2}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example: ARD is a product of 
+\begin_inset Formula $D$
+\end_inset
+
+ one-dimensional kernels, one for each input variable
+\begin_inset Formula 
+\[
+k_{ARD}(\mathbf{x},\mathbf{x}^{\prime})=\prod_{d=1}^{D}k_{SE,\ell_{d}}(x_{d},x_{d}^{\prime})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sum of kernels
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Sum
+\series default
+ of kernels is a kernel.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Let 
+\begin_inset Formula $f_{a}\sim GP\left[m_{a}(\mathbf{x}),k_{a}(\mathbf{x},\mathbf{x}^{\prime})\right]$
+\end_inset
+
+ independently of 
+\begin_inset Formula $f_{b}\sim GP\left[m_{b}(\mathbf{x}),k_{b}(\mathbf{x},\mathbf{x}^{\prime})\right]$
+\end_inset
+
+ then
+\begin_inset Formula 
+\[
+f_{a}+f_{b}\sim GP\left[m_{a}(\mathbf{x})+m_{b}(\mathbf{x}),k_{a}(\mathbf{x},\mathbf{x}^{\prime})+k_{b}(\mathbf{x},\mathbf{x}^{\prime})\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Adding up kernels is the same as adding up functions.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Discrete covariates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Suppose: 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ is continuous (mg/week) and 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ is binary (sex).
+\end_layout
+
+\begin_layout Itemize
+Linear regression: just use 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ coded as 
+\begin_inset Formula $x_{2}=0$
+\end_inset
+
+ if male, 
+\begin_inset Formula $x_{2}=1$
+\end_inset
+
+ if female.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implicit model:
+\begin_inset Formula 
+\[
+y=\begin{cases}
+\beta_{0}+\beta_{1}x_{1} & \text{if }x_{2}=0\\
+\beta_{0}+\tilde{\beta}_{0}+(\beta_{1}+\tilde{\beta}_{1})x_{1} & \text{if }x_{2}=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+GP: add the 0-1 coded covariate and use ARD kernel:
+\begin_inset Formula 
+\[
+\exp\left(-\frac{1}{2}\left(\frac{x_{1}-x_{1}^{\prime}}{\ell_{1}}\right)^{2}\right)\exp\left(-\frac{1}{2}\left(\frac{x_{2}-x_{2}^{\prime}}{\ell_{2}}\right)^{2}\right)
+\]
+
+\end_inset
+
+So the covariance between 
+\begin_inset Formula $\left(x_{1},0\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(x_{1},1\right)$
+\end_inset
+
+ is
+\begin_inset Formula 
+\[
+\exp\left(-\frac{1}{2}\left(\frac{1}{\ell_{2}}\right)^{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Discrete covariates
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Large 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+: men and female are believed to have similar profiles with respect to 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Small 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+: men and female are believed to have potentially very different profiles
+ with respect to 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/RealizationsDiscreteCovariate.png
+	lyxscale 20
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Categorical covariates with 
+\begin_inset Formula $K$
+\end_inset
+
+ levels: create 
+\begin_inset Formula $K$
+\end_inset
+
+ 
+\emph on
+one-hot
+\emph default
+ variables.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Large scale GPs
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GPs are 
+\series bold
+\color blue
+computationally challenging
+\series default
+\color inherit
+.
+ Need to invert 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrices such as 
+\begin_inset Formula $\left[K(\mathbf{x},\mathbf{x})+\sigma^{2}I\right]^{-1}$
+\end_inset
+
+.
+ 
+\series bold
+\color blue
+Scales as 
+\begin_inset Formula $O(n^{3})$
+\end_inset
+
+
+\series default
+\color inherit
+.
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Banded covariance functions
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Special covariance functions that makes 
+\begin_inset Formula $K(\mathbf{x},\mathbf{x})$
+\end_inset
+
+ sparse.
+ 
+\end_layout
+
+\begin_layout Itemize
+Observations more than a certain distance apart are uncorrelated.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sparse matrix algebra.
+ 
+\end_layout
+
+\begin_layout Itemize
+Still 
+\begin_inset Formula $O(n^{3})$
+\end_inset
+
+, but with much smaller proportionality constant (i.e.
+ much faster for a given 
+\begin_inset Formula $n$
+\end_inset
+
+).
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Large scale GPs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Introduce 
+\begin_inset Formula $m$
+\end_inset
+
+ latent 
+\series bold
+\color blue
+inducing variables
+\series default
+\color inherit
+ 
+\begin_inset Formula $\mathbf{u}=\left\{ u_{1},...,u_{m}\right\} $
+\end_inset
+
+ with corresponding inducing inputs 
+\begin_inset Formula $\mathbf{X}_{u}=\left\{ \mathbf{x}_{u_{1}},\mathbf{x}_{u_{2}},...,\mathbf{x}_{u_{m}}\right\} $
+\end_inset
+
+.
+ Pseudo inputs.
+ 
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+Fully Independent Conditional
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+FIC
+\series default
+\color inherit
+) method
+\emph on
+ assumes
+\emph default
+ that the elements in 
+\begin_inset Formula $\mathbf{f}$
+\end_inset
+
+ are independent given the 
+\begin_inset Formula $\mathbf{u}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(\mathbf{f}\vert\mathbf{X},\mathbf{X}_{u},\mathbf{u},\theta)=\prod_{i=1}^{n}p_{i}(f_{i}\vert\mathbf{X},\mathbf{X}_{u},\mathbf{u},\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Computations are now 
+\begin_inset Formula $O(m^{2}n)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $m\ll n$
+\end_inset
+
+, much faster computations.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Partially Independent Conditional
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+PIC
+\series default
+\color inherit
+).
+ Extension where blocks of 
+\begin_inset Formula $\mathbf{f}=(\mathbf{f}_{1},...,\mathbf{f}_{k})$
+\end_inset
+
+ and each 
+\begin_inset Formula $\mathbf{f}_{i}$
+\end_inset
+
+ is a block of 
+\begin_inset Formula $b$
+\end_inset
+
+ elements from 
+\begin_inset Formula $\mathbf{f}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+PIC assumes that the blocks are independent given the inducing variables
+ 
+\begin_inset Formula $\mathbf{u}$
+\end_inset
+
+, but that the elements within each block are dependent.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $b=1$
+\end_inset
+
+ gives FIC.
+ 
+\begin_inset Formula $b=n$
+\end_inset
+
+ gives the original GP.
+\end_layout
+
+\begin_layout Itemize
+The locations of the inducing variables 
+\begin_inset Formula $\mathbf{X}_{u}$
+\end_inset
+
+ are learned by optimization.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example Matlab's own toolbox
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Statistics and Machine Learning Toolbox.
+ 
+\end_layout
+
+\begin_layout Itemize
+Many kernels, fitting methods etc.
+\end_layout
+
+\begin_layout Itemize
+Limited to 
+\series bold
+regression
+\series default
+ (continuous response).
+\end_layout
+
+\begin_layout Itemize
+Can include explicit basis functions.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\color black
+gprMdl = fitrgp(Xtrain,ytrain,'FitMethod','fic',
+\begin_inset Newline newline
+\end_inset
+
+'KernelFunction','ardsquaredexponential',
+\begin_inset Newline newline
+\end_inset
+
+'KernelParameters',[sigmaM0;sigmaF0],
+\begin_inset Newline newline
+\end_inset
+
+'Sigma',sigma0);
+\family default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+See 
+\family typewriter
+\color black
+MatlabGPexample.m
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example R - kernlab
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The kernlab package includes many Kernel methods (e.g.
+ SVM), including also GPs.
+\end_layout
+
+\begin_layout Itemize
+Non-traditional parametrization of kernel functions.
+\end_layout
+
+\begin_layout Itemize
+Can do both 
+\series bold
+regression
+\series default
+ (continuous response) or 
+\series bold
+classification
+\series default
+ (categorical response).
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\color black
+GPfit <- gausspr(logWage ~ age, kernel = 'rbfdot', 
+\begin_inset Newline newline
+\end_inset
+
+par = list(sigma = 1))
+\family default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+See 
+\family typewriter
+\color black
+KernLabDemo.R
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
