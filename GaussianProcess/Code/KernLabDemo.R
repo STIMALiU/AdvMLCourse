@@ -2,8 +2,9 @@
 
 setwd('/Users/mv/Dropbox/Teaching/AdvML/GaussianProcess/Code')
 #install.packages('kernlab')
-library(kernlab)
 #install.packages("AtmRay") # To make 2D grid like in Matlab's meshgrid
+
+library(kernlab)
 library(AtmRay)
 
 ### Regression on the LIDAR data  ###
@@ -15,18 +16,6 @@ plot(Distance,LogRatio)
 GPfit <- gausspr(Distance, LogRatio)
 ytest <- predict(GPfit, Distance)
 lines(Distance,ytest,col="red")
-
-
-GPfit <- gausspr(Distance, LogRatio, kernel = 'rbfdot', par = list(sigma = 1), variance.model = TRUE)
-
-plot(Distance,LogRatio)
-meanPred <- predict(GPfit, Distance)
-stdPred <- predict(GPfit, Distance, type="sdeviation")
-lines(Distance, meanPred)
-lines(Distance, meanPred + 1.96*stdPred, col="red")
-lines(Distance, meanPred - 1.96*stdPred, col="red")
-
-
 
 
 #### Regression on the Canadian wages data ####
@@ -109,3 +98,4 @@ plot(gridPoints,  pch=".", cex=3, col=ifelse(meanPred==1, "red", ifelse(meanPred
 points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red", cex=10, pch=".")
 points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue",  cex=10, pch=".")
 points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green",  cex=10, pch=".")
+
