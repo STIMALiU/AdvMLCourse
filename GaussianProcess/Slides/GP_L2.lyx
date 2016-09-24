@@ -528,7 +528,7 @@ Periodic kernels
  Example: 
 \begin_inset Formula 
 \[
-k(x,x^{\prime})=\sigma_{f}^{2}\exp\left(-\frac{2\sin^{2}\left(\pi\left|x-x^{\prime}\right|^{2}/d\right)}{\ell^{2}}\right).
+k(x,x^{\prime})=\sigma_{f}^{2}\exp\left(-\frac{2\sin^{2}\left(\pi\left|x-x^{\prime}\right|/d\right)}{\ell^{2}}\right).
 \]
 
 \end_inset
