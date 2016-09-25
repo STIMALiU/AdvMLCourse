@@ -22,7 +22,7 @@ library(AtmRay)
 X <- matrix(rnorm(12), 4, 3)
 Xstar <- matrix(rnorm(15), 5, 3)
 ell <- 1
-SEkernel <- rbfdot(sigma = 1/(2*ell^2)) # Note how I reparametrize the rbfdor (which is the SE kernel) in kernlab
+SEkernel <- rbfdot(sigma = 1/(2*ell^2)) # Note how I reparametrize the rbfdo (which is the SE kernel) in kernlab
 SEkernel(1,2) # Just a test - evaluating the kernel in the points x=1 and x'=2
 # Computing the whole covariance matrix K from the kernel. Just a test.
 K <- kernelMatrix(kernel = SEkernel, x = X, y = Xstar) # So this is K(X,Xstar)
@@ -97,38 +97,6 @@ meanPred <- predict(GPfit, Distance)
 lines(Distance, meanPred, col="black", lwd = 2)
 
 
-
-## THE MARGINAL LIKELIHOOD STUFF BELOW GIVES ME STRANGE RESULTS. IGNORE FOR NOW ##
-
-## Defining the log marginal likelihood function
-MargLikeGPReg <- function(X, y, kernel, kpar, sigmaNoise){
-  kernelFunc <- do.call(kernel, kpar)
-  K <- kernelMatrix(kernel = kernelFunc, x = X) # K(X,X)
-  n <- length(y)
-  
-  L = chol(K+sigmaNoise^2*diag(n));
-  alpha_ <- solve(t(L),solve(L,y))
-  return( -0.5*crossprod(y,alpha_) -sum(log(diag(L))) )
-}
-
-# Evalating the log marginal likelihood over a grid of values
-sigmafGrid <- seq(0.1,1,by = 0.2)
-ellGrid <- seq(1,10,by = 1)
-lml <- matrix(NA, length(ellGrid), length(sigmafGrid))
-for (j in 1:length(sigmafGrid)){
-  for (i in 1:length(ellGrid)){
-    lml[i,j] <- MargLikeGPReg(X = Distance, y = LogRatio, kernel = Matern32, kpar = list(sigmaf = sigmafGrid[j], ell = ellGrid[i]), sigmaNoise)
-  }
-}
-# Find the hyperparametes with largest log marginal likelihood over the grid
-optEll <- ellGrid[which(lml == max(lml), arr.ind =TRUE)[1]]
-optSigmaf <- sigmafGrid[which(lml == max(lml), arr.ind =TRUE)[2]]
-message(c("The optimal hyperparameters are: ell = ",optEll," and ", "sigmaf = ",optSigmaf))
-
-# Plotting the fit based on the optimal hyperparameters
-GPfit <- gausspr(Distance, LogRatio, kernel = Matern32, kpar = list(sigmaf = optSigmaf, ell=optEll), var = sigmaNoise^2) 
-meanPred <- predict(GPfit, Distance)
-lines(Distance, meanPred, col="red", lwd = 3)
 
 
 
