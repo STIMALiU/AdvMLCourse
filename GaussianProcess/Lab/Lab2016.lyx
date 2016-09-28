@@ -1,0 +1,1467 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LINKÖPING UNIVERSITY
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-09-23
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Department of Computer and Information Science
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Advanced Machine Learning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Division of Statistics and Machine Learning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Master and PhD course
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+Gaussian Processes - Computer Lab
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0cm"
+width "97.5col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Deadline
+\series default
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+See LISAM
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Teacher
+\series default
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Grades
+\series default
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pass/Fail
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Submission:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Via LISAM
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+You should use R to solve the lab since the computer exam will be in R.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output: an individual report and a group report to be presented on the seminar.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Attach your code in LISAM as separate files.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0cm"
+width "97.5col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Implementing Gaussian process regression from scratch
+\series default
+.
+ This first exercise will have you writing your own code for the Gaussian
+ process regression model:
+\begin_inset Formula 
+\begin{align*}
+y & =f(x)+\varepsilon\quad\varepsilon\sim N(0,\sigma_{n}^{2})\\
+f & \sim GP\left[0,k\left(x,x^{\prime}\right)\right].
+\end{align*}
+
+\end_inset
+
+When it comes to the posterior distribution for 
+\begin_inset Formula $f$
+\end_inset
+
+, I 
+\series bold
+strongly
+\series default
+ suggest that you implement Algorithm 2.1 on page 19 of Rasmussen and Willams
+ (RW) 
+\begin_inset CommandInset href
+LatexCommand href
+name "book"
+target "http://www.gaussianprocess.org/gpml/chapters/RW2.pdf"
+
+\end_inset
+
+.
+ That algorithm uses the Cholesky decomposition (
+\family typewriter
+chol()
+\family default
+ in R) to attain numerical stability.
+ Here is what you need to do:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Write your own code for simulating from the posterior distribution of 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ using the squared exponential kernel.
+ The function (name it 
+\family sans
+\color black
+posteriorGP
+\family default
+\color inherit
+) should return vectors with the posterior mean and variance of 
+\begin_inset Formula $f$
+\end_inset
+
+, both evaluated at a set of 
+\begin_inset Formula $x$
+\end_inset
+
+-values (
+\begin_inset Formula $x^{\star}$
+\end_inset
+
+).
+ You can assume that the prior mean of 
+\begin_inset Formula $f$
+\end_inset
+
+ is zero for all 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The function should have the following inputs:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\family sans
+\color black
+x
+\family default
+\color inherit
+ (vector of training inputs)
+\end_layout
+
+\begin_layout Enumerate
+
+\family sans
+\color black
+y
+\family default
+\color inherit
+ (vector of training targets/outputs)
+\end_layout
+
+\begin_layout Enumerate
+
+\family sans
+\color black
+xStar
+\family default
+\color inherit
+ (vector of inputs where the posterior distribution is evaluated, i.e.
+ 
+\begin_inset Formula $x^{\star}$
+\end_inset
+
+.
+ As in my slides).
+\end_layout
+
+\begin_layout Enumerate
+
+\family sans
+\color black
+hyperParam
+\family default
+\color inherit
+ (vector with two elements 
+\begin_inset Formula $\sigma_{f}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Enumerate
+
+\family sans
+\color black
+sigmaNoise
+\family default
+\color inherit
+ (
+\begin_inset Formula $\sigma_{n}$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+[Hint: I would write a separate function for the Kernel (see my 
+\family sans
+\color black
+GaussianProcess.R
+\family default
+\color inherit
+ function on the course web page) which is then called from the 
+\family sans
+\color black
+posteriorGP
+\family default
+\color inherit
+ function.]
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Now let the prior hyperparameters be 
+\begin_inset Formula $\sigma_{f}=1,\ell=0.3$
+\end_inset
+
+.
+ Update this prior with a single observation: 
+\begin_inset Formula $(x,y)=(0.4,0.719)$
+\end_inset
+
+.
+ Assume that the noise standard deviation is known to be 
+\begin_inset Formula $\sigma_{n}=0.1$
+\end_inset
+
+.
+ Plot the posterior mean of 
+\begin_inset Formula $f$
+\end_inset
+
+ over the interval 
+\begin_inset Formula $x\in[-1,1]$
+\end_inset
+
+.
+ Plot also 
+\begin_inset Formula $95\%$
+\end_inset
+
+ probability (pointwise) bands for 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Update your posterior from 1b) with another observation: 
+\begin_inset Formula $(x,y)=(-0.6,-0.044)$
+\end_inset
+
+.
+ Plot the posterior mean of 
+\begin_inset Formula $f$
+\end_inset
+
+ over the interval 
+\begin_inset Formula $x\in[-1,1]$
+\end_inset
+
+.
+ Plot also 
+\begin_inset Formula $95\%$
+\end_inset
+
+ probability bands for 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ [Hint: updating the posterior after one observation with a new observation
+ gives the same result as updating the prior directly with the two observations.
+ Bayes is beautiful!]
+\end_layout
+
+\begin_layout Enumerate
+Compute the posterior distribution of 
+\begin_inset Formula $f$
+\end_inset
+
+ using all 
+\begin_inset Formula $5$
+\end_inset
+
+ data points in Table 1 below (note that the two previous observations are
+ included in the table).
+ Plot the posterior mean of 
+\begin_inset Formula $f$
+\end_inset
+
+ over the interval 
+\begin_inset Formula $x\in[-1,1]$
+\end_inset
+
+.
+ Plot also 
+\begin_inset Formula $95\%$
+\end_inset
+
+ probability intervals for 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+[(e)]
+\end_layout
+
+\end_inset
+
+Repeat 1d), this time with the hyperparameters 
+\begin_inset Formula $\sigma_{f}=1,\ell=1$
+\end_inset
+
+.
+ Compare the results.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.768
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.044
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.940
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.719
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.664
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simple data set for GP regression.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Gaussian process regression on real data using the 
+\family typewriter
+kernlab
+\family default
+ package
+\series default
+.
+ This exercise lets you explore the kernlab package on a data set of daily
+ mean temperature in Stockholm (Tullinge) during the period January 1, 2010
+ - December 31, 2015.
+ I have removed the leap year day February 29, 2012 to make your life simpler.
+ You can read the dataset with the command: 
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+\size scriptsize
+read.csv('https://github.com/STIMALiU/AdvMLCourse/raw/master/GaussianProcess/Code/
+TempTullinge.csv', header=TRUE, sep=';')
+\family default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+Create the variable 
+\family typewriter
+time
+\family default
+ which records the day number since the start of the dataset (i.e.
+ 
+\family typewriter
+time
+\family default
+
+\begin_inset Formula $=1,2,...,365\cdot6=2190$
+\end_inset
+
+ ).
+ Also, create the variable 
+\family typewriter
+day
+\family default
+ that records the day number since the start of each year (i.e.
+ 
+\family typewriter
+day
+\family default
+
+\begin_inset Formula $=1,2,...,365,1,2,...,365$
+\end_inset
+
+).
+ Estimating a GP on 
+\begin_inset Formula $2190$
+\end_inset
+
+ observations can take some time on slower computers, so let's thin out
+ the data by only using every fifth observation.
+ This means that your time variable is now 
+\family typewriter
+time
+\family default
+
+\begin_inset Formula $=1,6,11,...,2186$
+\end_inset
+
+ and 
+\family typewriter
+day
+\begin_inset Formula $=1,6,11,...,361,1,6,...,361$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Familiarize yourself with the following functions in 
+\family typewriter
+kernlab
+\family default
+, in particular the 
+\family typewriter
+gausspr
+\family default
+ and 
+\family typewriter
+kernelMatrix
+\family default
+ function.
+ Do 
+\family typewriter
+?gausspr
+\family default
+ and read the input arguments and the output.
+ Also, go through my 
+\family typewriter
+KernLabDemo.R
+\family default
+ carefully; you will need to understand it.
+ Now, define your own square exponential kernel function (with parameters
+ 
+\begin_inset Formula $\ell$
+\end_inset
+
+ (
+\family typewriter
+ell
+\family default
+) and 
+\begin_inset Formula $\sigma_{f}$
+\end_inset
+
+ (
+\family typewriter
+sigmaf
+\family default
+)), evaluate it in the point 
+\begin_inset Formula $x=1$
+\end_inset
+
+, 
+\begin_inset Formula $x^{\prime}=2$
+\end_inset
+
+, and use the 
+\family typewriter
+kernelMatrix
+\family default
+ function to compute the covariance matrix 
+\begin_inset Formula $K(\mathbf{x},\mathbf{x}_{\star})$
+\end_inset
+
+ for the input vectors 
+\begin_inset Formula $\mathbf{x}=(1,3,4)^{T}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{x}_{\star}=(2,3,4)^{T}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Consider first the model:
+\begin_inset Formula 
+\begin{align*}
+temp & =f(time)+\varepsilon\quad\varepsilon\sim N(0,\sigma_{n}^{2})\\
+f & \sim GP\left[0,k(time,time^{\prime})\right]
+\end{align*}
+
+\end_inset
+
+Let 
+\begin_inset Formula $\sigma_{n}^{2}$
+\end_inset
+
+ be the residual variance from a simple quadratic regression fit (using
+ the
+\family typewriter
+ lm()
+\family default
+ function in R).
+ Estimate the above Gaussian process regression model using the squared
+ exponential function from 2a) with 
+\begin_inset Formula $\sigma_{f}=20$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell=0.2$
+\end_inset
+
+.
+ Use the predict function to compute the posterior mean at every data point
+ in the training datasets.
+ Make a scatterplot of the data and superimpose the posterior mean of 
+\begin_inset Formula $f$
+\end_inset
+
+ as a curve (use 
+\family typewriter
+type="l"
+\family default
+ in the plot function).
+ Play around with different values on 
+\begin_inset Formula $\sigma_{f}$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell$
+\end_inset
+
+ (no need to write this in the report though).
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+Kernlab
+\family default
+ can compute the posterior variance of 
+\begin_inset Formula $f$
+\end_inset
+
+, but I suspect a bug in the code (I get weird results).
+ Do you own computations for the posterior variance of 
+\begin_inset Formula $f$
+\end_inset
+
+ (hint: Algorithm 2.1 in RW), and plot 95% (pointwise) posterior probability
+ bands for 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Use 
+\begin_inset Formula $\sigma_{f}=20$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell=0.2$
+\end_inset
+
+.
+ Superimpose those bands on the figure with the posterior mean in 2b).
+\end_layout
+
+\begin_layout Enumerate
+Consider now the model
+\begin_inset Formula 
+\begin{align*}
+temp & =f(day)+\varepsilon\quad\varepsilon\sim N(0,\sigma_{n}^{2})\\
+f & \sim GP\left[0,k(day,day^{\prime})\right]
+\end{align*}
+
+\end_inset
+
+Estimate the model using the squared exponential function from 2a) with
+ 
+\begin_inset Formula $\sigma_{f}=20$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell=6\cdot0.2=1.2$
+\end_inset
+
+.
+ (I multiplied 
+\begin_inset Formula $\ell$
+\end_inset
+
+ by 6 compared to when you used 
+\family typewriter
+time
+\family default
+ as input variable since 
+\family typewriter
+kernlab
+\family default
+ automatically standardizes the data which makes the distance between points
+ larger for 
+\family typewriter
+day
+\family default
+ compared to 
+\family typewriter
+time
+\family default
+).
+ Superimpose the posterior mean from this model on the fit (posterior mean)
+ from the model with 
+\family typewriter
+time
+\family default
+ using 
+\begin_inset Formula $\sigma_{f}=20,\ell=0.2$
+\end_inset
+
+.
+ Note that this plot should also have the 
+\family typewriter
+time
+\family default
+ variable on the horizontal axis.
+ Compare the results from using 
+\family typewriter
+time
+\family default
+ to the ones with 
+\family typewriter
+day
+\family default
+.
+ What are the pros and cons of each model?
+\end_layout
+
+\begin_layout Enumerate
+Now implement a generalization of the periodic kernel given in my slides
+ from Lecture 2 of the GP topic (Slide 6)
+\begin_inset Formula 
+\[
+k(x,x^{\prime})=\sigma_{f}^{2}\exp\left(-\frac{2\sin^{2}\left(\pi\left|x-x^{\prime}\right|/d\right)}{\ell_{1}^{2}}\right)\times\exp\left(-\frac{1}{2}\frac{\left|x-x^{\prime}\right|^{2}}{\ell_{2}^{2}}\right).
+\]
+
+\end_inset
+
+Note that we have two different length scales here, and 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ controls the correlation between the same day in different years 
+\begin_inset Formula $(\ell_{2})$
+\end_inset
+
+.
+ So this kernel has four hyperparameters 
+\begin_inset Formula $\sigma_{f}$
+\end_inset
+
+, 
+\begin_inset Formula $\ell_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+ and the period 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ Estimate the GP model using the 
+\family typewriter
+time
+\family default
+ variable with this kernel with hyperparameters 
+\begin_inset Formula $\sigma_{f}=20$
+\end_inset
+
+, 
+\begin_inset Formula $\ell_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $\ell_{2}=10$
+\end_inset
+
+ and 
+\begin_inset Formula $d=365/$
+\end_inset
+
+
+\family typewriter
+sd(time)
+\family default
+.
+ The reason for the rather strange period here is that 
+\family typewriter
+kernlab
+\family default
+ standardized inputs to have standard deviation of 1.
+ Compare the fit to the previous two models (with 
+\begin_inset Formula $\sigma_{f}=20,\ell=0.2$
+\end_inset
+
+).
+ Discuss the results.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Gaussian process classification using the 
+\family typewriter
+kernlab
+\family default
+ package.
+ 
+\series default
+Download the banknote fraud data:
+\series bold
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+\series default
+\size scriptsize
+data <- read.csv('https://github.com/STIMALiU/AdvMLCourse/raw/master/GaussianProce
+ss/Code/banknoteFraud.csv', header=FALSE, sep=',')
+\begin_inset Newline newline
+\end_inset
+
+names(data) <- c("varWave","skewWave","kurtWave","entropyWave","fraud")
+ 
+\begin_inset Newline newline
+\end_inset
+
+data[,5] <- as.factor(data[,5])
+\family default
+\series bold
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series default
+You can read about this dataset 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "http://archive.ics.uci.edu/ml/datasets/banknote+authentication"
+
+\end_inset
+
+.
+ Choose 1000 observations as training data using the following command (i.e.
+ use the vector 
+\family typewriter
+SelectTraining
+\family default
+ to subset the training observations)
+\family typewriter
+\size scriptsize
+
+\begin_inset Newline newline
+\end_inset
+
+set.seed(111); SelectTraining <- sample(1:dim(data)[1], size = 1000, replace
+ = FALSE)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Use 
+\family typewriter
+kernlab
+\family default
+ to fit a Gaussian process classification model for 
+\family typewriter
+fraud
+\family default
+\series bold
+ 
+\series default
+on the training data, using 
+\family typewriter
+kernlab
+\family default
+.
+ Use 
+\family typewriter
+kernlab
+\family default
+'s the default kernel and hyperparameters.
+ Start with using only the first two covariates 
+\family typewriter
+varWave
+\family default
+ and 
+\family typewriter
+skewWave
+\family default
+ in the model.
+ Plot contours of the prediction probabilities over a suitable grid of values
+ for 
+\family typewriter
+varWave
+\family default
+ and 
+\family typewriter
+skewWave
+\family default
+.
+ Overlay the training data for fraud = 1 (as blue points) and fraud = 0
+ (as red points).
+ You can take a lot of code for this from my 
+\family typewriter
+KernLabDemo.R
+\family default
+.
+ Compute the confusion matrix for the classifier and its accuracy.
+\end_layout
+
+\begin_layout Enumerate
+Using the estimated model from 3a), make predictions for the testset.
+ Compute the accuracy.
+\end_layout
+
+\begin_layout Enumerate
+Train a model using all four covariates.
+ Make predictions on the test and compare the accuracy to the model with
+ only two covariates.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+Good luck!
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+- Mattias
+\end_layout
+
+\end_body
+\end_document
