@@ -1,0 +1,1940 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+732A96
+\end_layout
+
+\end_inset
+
+Advanced Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+State-space models
+\begin_inset Newline newline
+\end_inset
+
+Lecture 1
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Time varying parameter models
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+State space models
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+The Bayes filter
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+The Kalman filter
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Autoregressive time series models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Autoregressive process (AR)
+\series default
+\color inherit
+ for 
+\series bold
+\color blue
+time series
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+y_{t}=\rho y_{t-1}+\varepsilon_{t},\qquad\varepsilon_{t}\overset{iid}{\sim}N(0,\sigma^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+joint distribution
+\series default
+\color inherit
+ for the whole time sequence 
+\begin_inset Formula $y_{1},y_{2},...,y_{T}$
+\end_inset
+
+ factorizes as
+\begin_inset Formula 
+\[
+p(y_{1},...,y_{T})=p(y_{1})p(y_{2}\vert y_{1})\cdots p(y_{T}\vert y_{T-1})
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+y_{t}\vert y_{t-1}\sim N\left(\rho y_{t-1},\sigma^{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $AR(p)$
+\end_inset
+
+ process
+\begin_inset Formula 
+\[
+y_{t}\vert y_{t-1},...,y_{t-p}\sim N\left(\sum_{j=1}^{p}\rho_{j}y_{t-j},\sigma^{2}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $ARIMA(p,q)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Autoregressive time series models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/PlotAR1.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hidden Markov models
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Two 
+\series bold
+regimes
+\series default
+ defined by 
+\series bold
+\color blue
+latent
+\series default
+\color inherit
+ (
+\series bold
+\color blue
+hidden
+\series default
+\color inherit
+) variable 
+\begin_inset Formula $x_{t}\in\left\{ 1,2\right\} $
+\end_inset
+
+
+\begin_inset Formula 
+\[
+y_{t}=\begin{cases}
+\rho_{1}y_{t-1}+\varepsilon_{t},\qquad\varepsilon_{t}\overset{iid}{\sim}N(0,\sigma_{1}^{2}) & \text{ if }z_{t}=1\\
+\rho_{2}y_{t-1}+\varepsilon_{t},\qquad\varepsilon_{t}\overset{iid}{\sim}N(0,\sigma_{2}^{2}) & \text{ if }z_{t}=2
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ follows a 
+\series bold
+\color blue
+Markov chain
+\series default
+\color inherit
+.
+ Transition from state 
+\begin_inset Formula $j\rightarrow k$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\mathrm{Pr}\left(x_{t}=k\vert x_{t-1}=j\right)=A_{jk}
+\]
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But what if changes in parameters appear 
+\series bold
+more gradual
+\series default
+?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hidden Markov models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/PlotHiddenMarkovAR1.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Time varying parameter models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Smoothly 
+\series bold
+\color blue
+time varying parameter model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =\rho_{t}y_{t-1}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon}^{2}\right)\\
+\rho_{t} & =\rho_{t-1}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The persistence parameter 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is a 
+\series bold
+latent
+\series default
+ (
+\series bold
+hidden
+\series default
+) 
+\series bold
+continuous
+\series default
+ 
+\series bold
+variable
+\series default
+ that evolves over time (random walk).
+\end_layout
+
+\begin_layout Itemize
+More generally, for some 
+\begin_inset Formula $-1\le a<1$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =\rho_{t}y_{t-1}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon}^{2}\right)\\
+\rho_{t} & =a\rho_{t-1}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Time varying variance
+\series default
+
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =\rho y_{t-1}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon,t}^{2}\right)\\
+\ln\sigma_{\varepsilon,t}^{2} & =\ln\sigma_{\varepsilon,t-1}^{2}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Time varying parameter models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Smoothly 
+\series bold
+\color blue
+time varying parameter regression
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =\mathbf{x}_{t}^{T}\beta_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon}^{2}\right)\\
+\beta_{t} & =\beta_{t-1}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Smoothly 
+\series bold
+\color blue
+time varying parameter survival model
+\end_layout
+
+\begin_layout Itemize
+
+\color black
+The 
+\series bold
+\color blue
+hazard function
+\series default
+\color black
+ (conditional probability of death at time 
+\begin_inset Formula $t$
+\end_inset
+
+):
+\series bold
+\color blue
+
+\begin_inset Formula 
+\begin{align*}
+\lambda(t\vert\mathbf{x}) & =\lambda_{0}(t)\cdot\exp\left(\mathbf{x}^{T}\beta_{t}\right)\\
+\beta_{t} & =\beta_{t-1}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\series default
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+And so on ...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+State-space models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Basic 
+\series bold
+\color blue
+state-space model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;y_{t} & =Cx_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon}^{2}\right)\\
+\text{State eq: \;}x_{t} & =Ax_{t-1}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Measurements
+\series default
+\color inherit
+ 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ are driven by an underlying unobserved 
+\series bold
+\color blue
+state
+\series default
+\color inherit
+ 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Time-varying parameter
+\series default
+ 
+\series bold
+models
+\series default
+\color inherit
+: 
+\begin_inset Formula $x_{t}=\rho_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Hidden Markov models
+\series default
+\color inherit
+ are state space models with a 
+\series bold
+discrete
+\series default
+ 
+\series bold
+state
+\series default
+ variable.
+\end_layout
+
+\begin_layout Itemize
+Example 1: 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ is employment at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ are labor force survey estimates.
+ 
+\end_layout
+
+\begin_layout Itemize
+Example 2: 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ is democrats' voting share.
+ 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ are results from poll.
+\end_layout
+
+\begin_layout Itemize
+Example 3: 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+ is the position of flying vehicle at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+ are sensor measurements.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+State space models 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The
+\series bold
+ 
+\color blue
+linear Gaussian
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+state-space (LGSS) model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+ is a vector of 
+\series bold
+\color blue
+control variables 
+\series default
+\color black
+that affect the state.
+\end_layout
+
+\begin_layout Itemize
+Example 1: In robotics, 
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+ are control commands (steering, gas, brake etc).
+\end_layout
+
+\begin_layout Itemize
+Example 2: In economics, 
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+ could be the central banks increase/decrease of the interest rate.
+\end_layout
+
+\begin_layout Itemize
+Example 3: 
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+ could be amount spent on political campaigns.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The posterior distribution of the state 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The
+\series bold
+ 
+\color blue
+linear Gaussian
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+state-space (LGSS) model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Aim: the 
+\series bold
+\color blue
+posterior distribution of the state
+\series default
+\color inherit
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(\mathbf{x}_{t}\vert\mathbf{y}_{1},...,\mathbf{y}_{T},\mathbf{u}_{1},...,\mathbf{u}_{T})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Also called the 
+\series bold
+\color blue
+smoothing distribution
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+joint smoothing distribution
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+p(\mathbf{x}_{1},...,\mathbf{x}_{T}\vert\mathbf{y}_{1},...,\mathbf{y}_{T},\mathbf{u}_{1},...,\mathbf{u}_{T})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+More on this later.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Model structure 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The
+\series bold
+ 
+\color blue
+linear Gaussian
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+state-space (LGSS) model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note 1: 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+ is first order Markov: 
+\begin_inset Formula $p(\mathbf{x}_{t}\vert\mathbf{x}_{t-1},...,\mathbf{x}_{1})=p(\mathbf{x}_{t}\vert\mathbf{x}_{t-1})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Note 2: Conditional on 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+ is independent of past observations and states.
+\end_layout
+
+\begin_layout Itemize
+State space as 
+\series bold
+graphical model
+\series default
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The filtering distribution 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Short hand notation: 
+\begin_inset Formula $\mathbf{x}_{1:t}=\left\{ \mathbf{x}_{1},...,\mathbf{x}_{t}\right\} $
+\end_inset
+
+.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Aim: the 
+\series bold
+filtering distribution of the state
+\series default
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+p(\mathbf{x}_{t}\vert\mathbf{y}_{1:t},\mathbf{u}_{1:t})
+\]
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Short hand for the 
+\series bold
+\color blue
+posterior
+\series default
+\color inherit
+ (belief) for 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathrm{bel}(\mathbf{x}_{t})\equiv p(\mathbf{x}_{t}\vert\mathbf{y}_{1:t},\mathbf{u}_{1:t})
+\]
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Short hand for the 
+\series bold
+\color blue
+prior
+\series default
+\color inherit
+ (belief) for 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+, before the measurement at time 
+\begin_inset Formula $t$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\overline{\mathrm{bel}}(\mathbf{x}_{t})\equiv p(\mathbf{x}_{t}\vert\mathbf{y}_{1:t-1},\mathbf{u}_{1:t})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bayes filter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+We are now at time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+We have just given the control command 
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+We have not yet observed 
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+.
+ 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Our beliefs at this stage:
+\begin_inset Formula 
+\[
+\overline{\mathrm{bel}}(\mathbf{x}_{t})=\int p(\mathbf{x}_{t}\vert\mathbf{u}_{t},\mathbf{x}_{t-1})bel(\mathbf{x}_{t-1})d\mathbf{x}_{t-1}
+\]
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Now comes the observation 
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Update your beliefs
+\series default
+ using Bayes' theorem:
+\begin_inset Formula 
+\[
+\mathrm{bel}(\mathbf{x}_{t})\propto p(\mathbf{y}_{t}\vert\mathbf{x}_{t})\overline{\mathrm{bel}}(\mathbf{x}_{t}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Bayes filter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prediction step
+\series default
+\color inherit
+ (control update)
+\begin_inset Formula 
+\[
+\overline{\mathrm{bel}}(\mathbf{x}_{t})=\int p(\mathbf{x}_{t}\vert\mathbf{u}_{t},\mathbf{x}_{t-1})bel(\mathbf{x}_{t-1})d\mathbf{x}_{t-1}
+\]
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Measurement update step
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\mathrm{bel}(\mathbf{x}_{t})\propto p(\mathbf{y}_{t}\vert\mathbf{x}_{t})\overline{\mathrm{bel}}(\mathbf{x}_{t}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Kalman filter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+Kalman filter
+\series default
+\color inherit
+ is the special case of the Bayes filter for the linear Gaussian state-space
+ (LGSS) model.
+\end_layout
+
+\begin_layout Itemize
+Under 
+\series bold
+\color blue
+linearity
+\series default
+\color inherit
+ and 
+\series bold
+\color blue
+Gaussianity
+\series default
+\color inherit
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+we can compute the integral in the prediction step analytically
+\end_layout
+
+\begin_layout Itemize
+the posterior in the measurement update becomes Gaussian
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Prediction update
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\overline{\mathrm{bel}}(\mathbf{x}_{t})=N\left(\bar{\mu}_{t},\bar{\Sigma}_{t}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Measurement update
+\series default
+\color inherit
+
+\begin_inset Formula 
+\[
+\mathrm{bel}(\mathbf{x}_{t})=N\left(\mu_{t},\Sigma_{t}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The Kalman filter tells us how to 
+\series bold
+iteratively
+\series default
+ compute the sequences 
+\begin_inset Formula $\left\{ \mu_{t},\Sigma_{t}\right\} $
+\end_inset
+
+ throughout time 
+\begin_inset Formula $t=1,..,T$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The Kalman filter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The
+\series bold
+ 
+\color blue
+linear Gaussian
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+state-space (LGSS) model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color red
+Algorithm
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+KalmanFilter
+\series default
+\color inherit
+(
+\begin_inset Formula $\mu_{t-1},\Sigma_{t-1}$
+\end_inset
+
+,
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+,
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\text{Prediction update: }\;\;\;\;\,\;\begin{cases}
+\bar{\mu}_{t}=\mathbf{A}\mu_{t-1}+\mathbf{B}\mathbf{u}_{t}\\
+\bar{\Sigma}_{t}=\mathbf{A}\Sigma_{t-1}\mathbf{A}^{T}+\Omega_{\nu}
+\end{cases}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Measurement update : }\begin{cases}
+\mathbf{K}_{t}=\bar{\Sigma}_{t}\mathbf{C}^{T}\left(\mathbf{C}\bar{\Sigma}_{t}\mathbf{C}^{T}+\Omega_{\varepsilon}\right)^{-1}\\
+\mu_{t}=\bar{\mu}_{t}+\mathbf{K}_{t}(\mathbf{y}_{t}-\mathbf{C}\bar{\mu}_{t})\\
+\Sigma_{t}=\left(\mathbf{I}-\mathbf{K}_{t}\mathbf{C}\right)\bar{\Sigma}_{t}
+\end{cases}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Return 
+\begin_inset Formula $\mu_{t},\Sigma_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kalmar filter intuition
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Assume everything is univariate and no control:
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;y_{t} & =cx_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\omega_{\varepsilon}^{2}\right)\\
+\text{State eq: \;}x_{t} & =ax_{t-1}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\omega_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color red
+Algorithm
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+KalmanFilter
+\series default
+\color inherit
+(
+\begin_inset Formula $\mu_{t-1},\sigma_{t-1}^{2}$
+\end_inset
+
+,
+\begin_inset Formula $y_{t}$
+\end_inset
+
+)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Prediction update: }\;\;\;\;\,\;\begin{cases}
+\bar{\mu}_{t}=a\mu_{t-1}\\
+\bar{\sigma}_{t}=a^{2}\sigma_{t-1}^{2}+\omega_{\nu}^{2}
+\end{cases}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Measurement update : }\begin{cases}
+k_{t}=\frac{c\bar{\sigma}_{t}^{2}}{c^{2}\bar{\sigma}_{t}^{2}+\omega_{\varepsilon}^{2}}\\
+\mu_{t}=\bar{\mu}_{t}+k_{t}(y_{t}-c\bar{\mu}_{t})\\
+\Sigma_{t}=\left(\frac{\omega_{\varepsilon}^{2}}{c^{2}\bar{\sigma}_{t}^{2}+\omega_{\varepsilon}^{2}}\right)\bar{\sigma}_{t}^{2}
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+A simulated example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The
+\series bold
+ 
+\color blue
+linear Gaussian
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+state-space (LGSS) model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;y_{t} & =x_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,1\right)\\
+\text{State eq: \;}x_{t} & =\mathbf{\text{0.9}}x_{t-1}+u_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,0.5\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Control: 
+\begin_inset Formula $u_{t}\sim\left|r_{t}\right|$
+\end_inset
+
+ where 
+\begin_inset Formula $r_{t}\sim N(0,1)$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T=100$
+\end_inset
+
+.
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Initial state value: 
+\begin_inset Formula $x_{0}\sim N(0,10^{2})$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Data, state and posterior of state
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/DataAndState.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Posterior intervals for the state
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/StateUncertainty.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
