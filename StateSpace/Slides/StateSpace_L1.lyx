@@ -663,10 +663,6 @@ y_{t} & =\mathbf{x}_{t}^{T}\beta_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overse
 \end_inset
 
 
-\begin_inset VSpace bigskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -691,7 +687,6 @@ hazard function
 
 ):
 \series bold
-\color blue
 
 \begin_inset Formula 
 \begin{align*}
@@ -702,17 +697,26 @@ hazard function
 \end_inset
 
 
-\series default
-\color inherit
-
-\begin_inset VSpace bigskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
-And so on ...
+
+\series bold
+\color blue
+Locally linear trend model
+\series default
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =\mu_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon}^{2}\right)\\
+\mu_{t} & =\mu_{t-1}+\beta_{t}+\nu_{t}\qquad\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)\\
+\beta_{t} & =\beta_{t-1}+\eta_{t}\qquad\eta_{t}\overset{iid}{\sim}N\left(0,\sigma_{\eta}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1145,6 +1149,42 @@ State space as
 graphical model
 \series default
 .
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Model structure 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/StateSpaceGraphicalModel.pdf
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
