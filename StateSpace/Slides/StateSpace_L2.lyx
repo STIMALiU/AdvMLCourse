@@ -1143,7 +1143,7 @@ state-space (LGSS) model
 
 \begin_inset Formula 
 \begin{align*}
-\mathbf{\text{Measurement eq: }}\;\mathbf{Y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\:\:\:\qquad\qquad\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\:\:\:\qquad\qquad\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
 \text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
 \end{align*}
 

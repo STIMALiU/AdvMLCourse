@@ -1,0 +1,1102 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+\setcounter{MaxMatrixCols}{10}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\definecolor{RawSienna}{cmyk}{0,0.87,0.82,0.31}
+\definecolor{gray97}{cmyk}{0,0,0,0.03}
+\definecolor{robinsegg}{cmyk}{0.18,0.04,0,0.07}
+\definecolor{cola}{cmyk}{0,0.315,0.35,0.155}
+
+\newenvironment{stepenumerate}{\begin{enumerate}[<+->]}{\end{enumerate}}
+\newenvironment{stepitemize}{\begin{itemize}[<+->]}{\end{itemize} }
+\newenvironment{stepenumeratewithalert}{\begin{enumerate}[<+-| alert@+>]}{\end{enumerate}}
+\newenvironment{stepitemizewithalert}{\begin{itemize}[<+-| alert@+>]}{\end{itemize} }
+\usecolortheme[named=RawSienna]{structure}
+%\usecolortheme[RGB={205,0,0}]{structure}
+\setbeamertemplate{navigation symbols}{}
+\useoutertheme{infolines}
+\usetheme{default}
+\setbeamertemplate{blocks}[shadow=true]
+%\setbeamerfont{structure}{shape=\itshape}
+\usefonttheme{structuresmallcapsserif}
+\setbeamertemplate{background canvas}{
+ % \ifnum \thepage>0 \relax % we are on the first page
+%\includegraphics[width=\paperwidth,height=\paperheight]{/home/mv/Dropbox/Foton/IconsWallpaper/greyribbonLighter.jpg}
+ % \else
+ 	% No background for page 2 and onwards
+ % \fi
+}
+\end_preamble
+\options xcolor=svgnames
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+732A96
+\end_layout
+
+\end_inset
+
+Advanced Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+State-space models
+\begin_inset Newline newline
+\end_inset
+
+Lecture 3
+\end_layout
+
+\begin_layout Author
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Mattias Villani
+\end_layout
+
+\end_inset
+
+Mattias Villani
+\end_layout
+
+\begin_layout Institute
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+STIMA, LiU
+\end_layout
+
+\end_inset
+
+Division of Statistics and Machine Learning
+\begin_inset Newline newline
+\end_inset
+
+Department of Computer and Information Science
+\begin_inset Newline newline
+\end_inset
+
+Linköping University 
+\end_layout
+
+\begin_layout Date
+\begin_inset Graphics
+	filename Graphics/LiU_secondary_1_black.png
+	lyxscale 7
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \thinspace{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Lecture overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color blue
+Non-linear state space models
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+The extended Kalman filter
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Non-Gaussian models
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Particle filters
+\color inherit
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Nonlinear state space models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size scriptsize
+\color black
+The
+\series bold
+ 
+\color red
+linear
+\color black
+ Gaussian
+\series default
+ 
+\series bold
+state-space (LGSS) model
+\series default
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\:\:\:\qquad\qquad\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size scriptsize
+\color black
+The
+\series bold
+ 
+\color red
+non-linear
+\color black
+ Gaussian
+\series default
+ 
+\series bold
+state-space model
+\series default
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\textcolor{red}{\ensuremath{h}}(\mathbf{x}_{t})+\varepsilon_{t}\:\:\:\qquad\qquad\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\text{State eq: \;}\mathbf{x}_{t} & =\textcolor{red}{\ensuremath{g}}(\mathbf{x}_{t-1},\mathbf{u}_{t})+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
+\end{align*}
+
+\end_inset
+
+
+\size default
+\color inherit
+where 
+\begin_inset Formula $h()$
+\end_inset
+
+ and 
+\begin_inset Formula $g()$
+\end_inset
+
+ are functions that maps vectors to vectors.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Kalman filter
+\series default
+ relied on 
+\series bold
+linearity
+\series default
+.
+ Not applicable here.
+\end_layout
+
+\begin_layout Itemize
+The 
+\series bold
+\color blue
+extended Kalman filter
+\series default
+\color inherit
+ (EKF): 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+\color blue
+linearize
+\series default
+\color inherit
+ 
+\begin_inset Formula $h()$
+\end_inset
+
+ and 
+\begin_inset Formula $g()$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Apply the usual Kalman filter on the linearized model.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+EKF works well when 
+\begin_inset Formula $h()$
+\end_inset
+
+ and 
+\begin_inset Formula $g()$
+\end_inset
+
+ are not too nonlinear and when the state uncertainty is not too large.
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearization of the state equation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+State equation
+\begin_inset Formula 
+\[
+x_{t}=g(x_{t-1},u_{t})+\nu_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Linearization of the state equation
+\series default
+\color inherit
+ around the point 
+\begin_inset Formula $x_{t-1}=\tilde{x}_{t-1}$
+\end_inset
+
+ (no need linearize wrt 
+\begin_inset Formula $u_{t}$
+\end_inset
+
+):
+\begin_inset Formula 
+\[
+g(x_{t-1},u_{t})\approx g(\tilde{x}_{t-1},u_{t})+G_{t}(\tilde{x}_{t-1},u_{t})\left(x_{t-1}-\tilde{x}_{t-1}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+G_{t}\equiv g^{\prime}(\tilde{x}_{t})\equiv\frac{\partial g(x_{t-1},u_{t})}{\partial x_{t-1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But what is a good point 
+\begin_inset Formula $\tilde{x}_{t-1}$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Itemize
+Use the value most likely 
+\series bold
+at the time of linearization
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Kalman filter uses the state equation at the 
+\series bold
+prediction step
+\series default
+.
+ Most likely value for 
+\begin_inset Formula $x_{t-1}$
+\end_inset
+
+ at that time is 
+\begin_inset Formula $\mu_{t-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+ is a vector: 
+\begin_inset Formula $\mathbf{G}_{t}$
+\end_inset
+
+ is a matrix of derivatives (with elements 
+\begin_inset Formula $\frac{\partial g_{i}}{\partial x_{j}}$
+\end_inset
+
+) like in multi-dimensional calculus.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearization of the measurement equation
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Measurement equation
+\begin_inset Formula 
+\[
+y_{t}=h(x_{t})+\varepsilon_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Linearization of the measurement equation
+\series default
+\color inherit
+ around the point 
+\begin_inset Formula $x_{t}=\tilde{x}_{t}$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+h(x_{t})\approx h(\tilde{x}_{t})+H_{t}\left(x_{t}-\tilde{x}_{t}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+H_{t}\equiv h^{\prime}(\tilde{x}_{t})\equiv\frac{\partial h(x_{t})}{\partial x_{t}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+But what is a good point 
+\begin_inset Formula $\tilde{x}_{t}$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Itemize
+Kalman filter uses measurement equation in the 
+\series bold
+measurement update step
+\series default
+.
+ Most likely value for 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ at that time is 
+\begin_inset Formula $\bar{\mu}_{t}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+When 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+ are vectors: 
+\begin_inset Formula $\mathbf{H}_{t}$
+\end_inset
+
+ is a matrix of derivatives (with elements 
+\begin_inset Formula $\frac{\partial h_{i}}{\partial x_{j}}$
+\end_inset
+
+) like in multi-dimensional calculus.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linearization - Thrun et al illustration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/KFapproxThrun.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The extended Kalman filter
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size scriptsize
+\color black
+The
+\series bold
+ non-linear Gaussian
+\series default
+ 
+\series bold
+state-space model
+\series default
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =h(\mathbf{x}_{t})+\varepsilon_{t}\:\:\:\qquad\qquad\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\text{State eq: \;}\mathbf{x}_{t} & =g(\mathbf{x}_{t-1},\mathbf{u}_{t})+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color red
+Algorithm
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+ExtendedKalmanFilter
+\series default
+\color inherit
+(
+\begin_inset Formula $\mu_{t-1},\Sigma_{t-1}$
+\end_inset
+
+,
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+,
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\text{Prediction update: }\;\;\;\;\,\;\begin{cases}
+\bar{\mu}_{t}=g(\mathbf{x}_{t-1},\mathbf{u}_{t})\\
+\bar{\Sigma}_{t}=\mathbf{G}_{t}\Sigma_{t-1}\mathbf{G}_{t}^{T}+\Omega_{\nu}
+\end{cases}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{Measurement update : }\begin{cases}
+\mathbf{K}_{t}=\bar{\Sigma}_{t}\mathbf{H}_{t}^{T}\left(\mathbf{H}_{t}\bar{\Sigma}_{t}\mathbf{H}_{t}^{T}+\Omega_{\varepsilon}\right)^{-1}\\
+\mu_{t}=\bar{\mu}_{t}+\mathbf{K}_{t}\left(\mathbf{y}_{t}-h\left(\bar{\mu}_{t}\right)\right)\\
+\Sigma_{t}=\left(\mathbf{I}-\mathbf{K}_{t}\mathbf{H}_{t}\right)\bar{\Sigma}_{t}
+\end{cases}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Return 
+\begin_inset Formula $\mu_{t},\Sigma_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Non-Gaussian state space models
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\size scriptsize
+\color red
+Linear
+\color black
+ non-Gaussian
+\series default
+ 
+\series bold
+state-space model
+\series default
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\:\:\:\qquad\qquad\qquad\varepsilon_{t}\overset{iid}{\sim}Non-Gaussian\\
+\text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}Non-Gaussian
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Student-
+\begin_inset Formula $t$
+\end_inset
+
+ errors can be turned (conditionally) Gaussian by data-augmentation.
+\end_layout
+
+\begin_layout Itemize
+The
+\series bold
+ non-linear non-Gaussian
+\series default
+ 
+\series bold
+state-space (LGSS) mode
+\series default
+
+\begin_inset Formula 
+\begin{align*}
+\mathbf{\text{Measurement eq: }}\; & p(\mathbf{y}_{t}\vert\mathbf{x}_{t})\\
+\text{State eq: \;} & p(\mathbf{x}_{t}\vert\mathbf{x}_{t-1},\mathbf{u}_{t})
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Example: 
+\series bold
+Poisson with time-varying intensity
+\series default
+
+\begin_inset Formula 
+\begin{align*}
+y_{t}\vert x_{t} & \sim\mathrm{Pois}(x_{t})\\
+x_{t}\vert x_{t-1} & \sim N\left(x_{t-1},\omega_{\nu}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The particle filter - Thrun et al illustration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/ParticlesThrun.pdf
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+The particle filter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color red
+Algorithm
+\series default
+\color inherit
+ 
+\series bold
+\color blue
+ParticleFilter
+\series default
+\color inherit
+(
+\begin_inset Formula $\mathcal{X}{}_{t-1},$
+\end_inset
+
+
+\begin_inset Formula $\mathbf{u}_{t}$
+\end_inset
+
+,
+\begin_inset Formula $\mathbf{y}_{t}$
+\end_inset
+
+)
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\begin{cases}
+\bar{\mathcal{X}_{t}}=\mathcal{X}_{t}=\emptyset\\
+\text{for }m=1\text{ to }M\text{ do}\\
+\quad\text{sample }x_{t}^{(m)}\sim p\left(x_{t}\vert x_{t-1}^{(m)},u_{t}\right) & \text{\textbf{Prediction/Propagation update}}\\
+\quad w_{t}^{(m)}=p\left(y_{t}\vert x_{t}^{(m)}\right)\\
+\quad\text{append }(x_{t}^{(m)},w_{t}^{(m)})\text{ to }\bar{\mathcal{X}_{t}}\\
+\text{end}
+\end{cases}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\text{  }\begin{cases}
+\text{for }m=1\text{ to }M\text{ do}\\
+\quad\text{draw }i\text{ with probability \propto}w_{t}^{(i)} & \text{\textbf{Measurement/resampling update}}\\
+\quad\text{append }x_{t}^{(i)}\text{ to }\bar{\mathcal{X}_{t}}\\
+\text{end}
+\end{cases}$
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Return 
+\begin_inset Formula $\mathcal{X}_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Kalman filter - simulated LGSS data
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/SimulatedDataKalman.png
+	lyxscale 20
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator parbreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Particle filter (M=1000) - simulated LGSS data
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Graphics/SimulatedDataParticle.png
+	lyxscale 20
+	scale 13
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
