@@ -977,7 +977,7 @@ state
 \end_layout
 
 \begin_layout Itemize
-Single-move Gibbs sampling:
+Single-move Gibbs sampling (inefficient!):
 \end_layout
 
 \begin_deeper
@@ -1029,20 +1029,14 @@ Run the Kalman filter forward in time
 \end_layout
 
 \begin_layout Itemize
-Simulate from (
-\family typewriter
-\color red
-almost
-\family default
-\color inherit
-) the smoothing distributions backward in time 
+Simulate states backward in time 
 \begin_inset Formula $t=T,T-1,...,1$
 \end_inset
 
 :
 \begin_inset Formula 
 \[
-\mathbf{x}_{t}\vert\mathbf{x}_{t+1},...,\mathbf{x}_{T},\theta\sim N(\mathbf{\tilde{s}}_{t},\mathbf{S}_{t})
+\mathbf{x}_{t}\vert\mathbf{x}_{t+1:T},y_{1:T},\theta\sim N(\mathbf{h}_{t},\mathbf{H}_{t})
 \]
 
 \end_inset
@@ -1050,16 +1044,54 @@ almost
 
 \begin_inset Formula 
 \begin{align*}
-\mathbf{\tilde{s}}_{t} & =\mu_{t}+\Sigma_{t}\mathbf{A}^{T}\bar{\Sigma}_{t+1}^{-1}\left(\textcolor{red}{\ensuremath{\mathbf{x}_{t+1}}}-\bar{\mu}_{t+1}\right)
+\mathbf{h}_{t} & =\mu_{t}+\Sigma_{t}\mathbf{A}^{T}\bar{\Sigma}_{t+1}^{-1}\left(\textcolor{red}{\ensuremath{\mathbf{x}_{t+1}}}-\bar{\mu}_{t+1}\right)
 \end{align*}
 
 \end_inset
 
-and 
-\begin_inset Formula $\mathbf{S}_{t}$
+and
+\begin_inset Formula 
+\[
+\mathbf{H}_{t}=\Sigma_{t}-\Sigma_{t}\mathbf{A}^{T}\bar{\Sigma}_{t+1}^{-1}\mathbf{A}\Sigma_{t}.
+\]
+
 \end_inset
 
- is exactly as in the smoothing.
+
+\end_layout
+
+\begin_layout Itemize
+The difference between the smoothing distributions and FFBS distributions
+ is that in FFBS we condition on 
+\begin_inset Formula $\mathbf{x}_{t+1:T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+So the FFBS gives the 
+\emph on
+joint
+\emph default
+ (smoothing) posterior for 
+\begin_inset Formula $\mathbf{x}_{1:T}$
+\end_inset
+
+, whereas the state smoothing gives the 
+\emph on
+marginal
+\emph default
+ posterior of 
+\begin_inset Formula $\mathbf{x}_{t}$
+\end_inset
+
+ for all 
+\begin_inset Formula $t$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
