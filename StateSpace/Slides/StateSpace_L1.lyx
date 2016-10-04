@@ -763,7 +763,7 @@ Local trend model
 \begin_inset Formula 
 \begin{align*}
 y_{t} & =\mu_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon}^{2}\right)\\
-\mu_{t} & =\mu_{t-1}+\beta_{t}+\nu_{t}\qquad\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)\\
+\mu_{t} & =\mu_{t-1}+\beta_{t-1}+\nu_{t}\qquad\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)\\
 \beta_{t} & =\beta_{t-1}+\eta_{t}\qquad\eta_{t}\overset{iid}{\sim}N\left(0,\sigma_{\eta}^{2}\right)
 \end{align*}
 
@@ -985,13 +985,9 @@ Example 3:
 status open
 
 \begin_layout Plain Layout
-State space models 
+Local trend model is a state space model 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Separator latexpar
 \end_inset
 
 
@@ -999,6 +995,8 @@ State space models
 
 \begin_deeper
 \begin_layout Itemize
+
+\size footnotesize
 The
 \series bold
  
@@ -1025,40 +1023,48 @@ state-space (LGSS) model
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $\mathbf{u}_{t}$
-\end_inset
 
- is a vector of 
 \series bold
+\size footnotesize
 \color blue
-control variables 
+Local trend model
 \series default
-\color black
-that affect the state.
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+y_{t} & =\mu_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\sigma_{\varepsilon}^{2}\right)\\
+\mu_{t} & =\mu_{t-1}+\beta_{t-1}+\nu_{t}\qquad\nu_{t}\overset{iid}{\sim}N\left(0,\sigma_{\nu}^{2}\right)\\
+\beta_{t} & =\beta_{t-1}+\eta_{t}\qquad\eta_{t}\overset{iid}{\sim}N\left(0,\sigma_{\eta}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Example 1: In robotics, 
-\begin_inset Formula $\mathbf{u}_{t}$
+State space formulation
+\size footnotesize
+
+\begin_inset Formula 
+\[
+x_{t}=\left(\begin{array}{c}
+\mu_{t}\\
+\beta_{t}
+\end{array}\right),\mathbf{A}=\left(\begin{array}{cc}
+1 & 1\\
+0 & 1
+\end{array}\right),\text{\textbf{C}=}\left(\begin{array}{cc}
+1 & 0\end{array}\right),\Omega_{\varepsilon}=\sigma_{\varepsilon}^{2},\Omega_{\nu}=\left(\begin{array}{cc}
+\sigma_{\nu1}^{2} & 0\\
+0 & \sigma_{\nu2}^{2}
+\end{array}\right)
+\]
+
 \end_inset
 
- are control commands (steering, gas, brake etc).
-\end_layout
 
-\begin_layout Itemize
-Example 2: In economics, 
-\begin_inset Formula $\mathbf{u}_{t}$
-\end_inset
-
- could be the central banks increase/decrease of the interest rate.
-\end_layout
-
-\begin_layout Itemize
-Example 3: 
-\begin_inset Formula $\mathbf{u}_{t}$
-\end_inset
-
- could be amount spent on political campaigns.
 \end_layout
 
 \end_deeper
@@ -1711,23 +1717,21 @@ The Kalman filter
 
 \begin_deeper
 \begin_layout Itemize
+
+\size scriptsize
+\color black
 The
 \series bold
- 
-\color blue
-linear Gaussian
+ linear Gaussian
 \series default
-\color inherit
  
 \series bold
-\color blue
 state-space (LGSS) model
 \series default
-\color inherit
 
 \begin_inset Formula 
 \begin{align*}
-\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
+\mathbf{\text{Measurement eq: }}\;\mathbf{y}_{t} & =\mathbf{C}\mathbf{x}_{t}+\varepsilon_{t}\:\:\:\qquad\qquad\qquad\varepsilon_{t}\overset{iid}{\sim}N\left(0,\Omega_{\varepsilon}\right)\\
 \text{State eq: \;}\mathbf{x}_{t} & =\mathbf{A}\mathbf{x}_{t-1}+\mathbf{B}\mathbf{u}_{t}+\nu_{t}\qquad\;\;\;\nu_{t}\overset{iid}{\sim}N\left(0,\Omega_{\nu}\right)
 \end{align*}
 
