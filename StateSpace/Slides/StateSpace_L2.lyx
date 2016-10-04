@@ -977,32 +977,27 @@ state
 \end_layout
 
 \begin_layout Itemize
-Single-move Gibbs sampling (inefficient!):
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-for 
-\begin_inset Formula $t=1,....,T$
+Simulate the state trajectory 
+\series bold
+backward in time 
+\series default
+starting with 
+\begin_inset Formula $x_{T}$
 \end_inset
 
- do: 
-\end_layout
+:
+\size small
 
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $\mathbf{x}_{t}\vert\mathbf{x}_{-t},\mathbf{y}_{1:T}\sim Normal$
-\end_inset
+\begin_inset Formula 
+\[
+p(\mathbf{x}_{1:T}\vert\mathbf{y}_{1:T},\theta)=p(\mathbf{x}_{T}\vert\mathbf{y}_{1:T},\theta)p(\mathbf{x}_{T-1}\vert\mathbf{x}_{T},\mathbf{y}_{1:T},\theta)\cdots p(\mathbf{x}_{1}\vert\mathbf{x}_{T-1:2},\mathbf{y}_{1:T},\theta)
+\]
 
-
-\begin_inset VSpace medskip
 \end_inset
 
 
 \end_layout
 
-\end_deeper
-\end_deeper
 \begin_layout Itemize
 
 \series bold
@@ -1029,8 +1024,20 @@ Run the Kalman filter forward in time
 \end_layout
 
 \begin_layout Itemize
+Simulate 
+\begin_inset Formula $x_{T}$
+\end_inset
+
+ from 
+\begin_inset Formula $N(\mu_{T},\Sigma_{T})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
 Simulate states backward in time 
-\begin_inset Formula $t=T,T-1,...,1$
+\begin_inset Formula $t=T-1,T-2,...,1$
 \end_inset
 
 :
@@ -1060,14 +1067,13 @@ and
 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-The difference between the smoothing distributions and FFBS distributions
- is that in FFBS we condition on 
+Note: FFBS distributions conditions on 
 \begin_inset Formula $\mathbf{x}_{t+1:T}$
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Itemize
@@ -1094,7 +1100,6 @@ marginal
 .
 \end_layout
 
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator parbreak
