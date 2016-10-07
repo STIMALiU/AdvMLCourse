@@ -1,0 +1,1641 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\newcommand{\indep}{\rotatebox[origin=c]{90}{$\models$}}
+\usepackage{xcolor}
+
+\let\olditemize\itemize
+\renewenvironment{itemize}
+{\begin{olditemize}}
+{\par
+\end{olditemize}
+\vspace{0.7\baselineskip}
+\par}
+
+
+\usepackage{amsthm}\usepackage{textcomp}\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{bbm}
+\usepackage{url}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LINKÖPING UNIVERSITY
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2016-10-07
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Department of Computer and Information Science
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Advanced Machine Learning
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Division of Statistics and Machine Learning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Master and PhD course
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Matias Quiroz and Mattias Villani
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+State Space Models - Computer Lab
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0cm"
+width "97.5col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Deadline
+\series default
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+October 20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Teacher
+\series default
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Matias Quiroz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Grades
+\series default
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pass/Fail
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Submission:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Via LISAM
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+You should use R to solve the lab since the computer exam will be in R.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output: an individual report and a group report to be presented on the seminar.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Attach your code in LISAM as separate files.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0cm"
+width "97.5col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Implementation of the linear Gaussian state space model
+\series default
+.
+ Consider the linear Gaussian state space model 
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{t} & = & Cx_{t}+\epsilon_{t},\quad\epsilon_{t}\sim\mathcal{N}(0,\Omega_{\epsilon})\\
+x_{t} & = & Ax_{t-1}+Bu_{t}+v_{t},\quad v_{t}\sim\mathcal{N}(0,\Omega_{v})~(v_{t}\indep\epsilon_{t}),\quad x_{0}\sim\mathcal{N}(\mu_{0},\Sigma_{0})
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $y_{t}\in\mathbb{R}^{n_{y}\times1}$
+\end_inset
+
+ is the vector of observations at time 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $x_{t}\in\mathbb{R}^{n_{x}\times1}$
+\end_inset
+
+ is the unobserved state vector and 
+\begin_inset Formula $u_{t}\in\mathbb{R}^{n_{u}\times1}$
+\end_inset
+
+ it the control vector for 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+.
+ The dimensions of the matrices of the system are 
+\begin_inset Formula $C\in\mathbb{R}^{n_{y}\times n_{x}}$
+\end_inset
+
+, 
+\begin_inset Formula $\Omega_{\epsilon}\in\mathbb{R}^{n_{y}\times n_{y}}$
+\end_inset
+
+, 
+\begin_inset Formula $A,\Omega_{v},\mu_{0},\Sigma_{0}\in\mathbb{R}^{n_{x}\times n_{x}}$
+\end_inset
+
+ and 
+\begin_inset Formula $B\in\mathbb{R}^{n_{x}\times n_{u}}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Your implementation will use simulated data to remind you that this is a
+ good way to check that your code works.
+ Moreover, real data can often give rise to numerical instabilities that
+ have to be taken into account and this is outside the scope of this course.
+ In this problem you will work with both a scalar measurement and state
+ equation (i.e.
+ 
+\begin_inset Formula $n_{y}=n_{x}=1$
+\end_inset
+
+), but you should write the code so that it can handle matrices.
+ This is achieved by using the data type 
+\begin_inset Formula $\texttt{matrix}$
+\end_inset
+
+ in 
+\begin_inset Formula $\texttt{R}$
+\end_inset
+
+ when you define the variables (even if they are scalars!).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Check your results against those obtained using the 
+\family typewriter
+R
+\family default
+ package 
+\family typewriter
+DLM
+\family default
+.
+ This ensures that your code works properly, but more important it gives
+ you a good practice for the computer exam.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Simulate the model
+\series default
+.
+ Use 
+\begin_inset Formula $\texttt{set.seed(1234)}$
+\end_inset
+
+ when you simulate data in this exercise.
+ This is because (i) reproducibility facilitates the correction of the assignmen
+t and (ii) numerical instabilities do not appear (except the ones caused
+ by bugs!) when implementing the filtering and smoothing recursions.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Set 
+\begin_inset Formula $x_{0}=0$
+\end_inset
+
+ and simulate 
+\begin_inset Formula $T=100$
+\end_inset
+
+ observations from the following model 
+\begin_inset Formula 
+\begin{equation}
+\begin{split}y_{t} & =0.93x_{t}+\epsilon_{t},\quad\epsilon_{t}\sim\mathcal{N}(0,\Omega_{\epsilon}=0.5)\\
+x_{t} & =x_{t-1}+v_{t},\quad v_{t}\sim\mathcal{N}(0,\Omega_{v}=0.1)~(v_{t}\indep\epsilon_{t}),\quad x_{0}\sim\mathcal{N}(\mu_{0}=0,\Sigma_{0}=10).
+\end{split}
+\label{eqn:scalarmodel}
+\end{equation}
+
+\end_inset
+
+Note that this model does not have any control variables, but you can still
+ implement the code in the general matrix form and define 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{t}$
+\end_inset
+
+ to be a matrix/vector of only zeros.
+ With 
+\begin_inset Formula $\texttt{set.seed(1234)}$
+\end_inset
+
+ the simulated state and observations should look as in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:state_data"
+
+\end_inset
+
+.
+ The data is also found in 
+\family typewriter
+simulated_data.Rda
+\family default
+.
+ 
+\begin_inset Float figure
+placement h!
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename State_data.png
+	width 70text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulated state and data with seed '1234'.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:state_data"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Filtering: Sequential state inference.
+
+\series default
+ We will learn 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ sequentially for the model in Equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eqn:scalarmodel"
+
+\end_inset
+
+, using only data up to 
+\begin_inset Formula $t$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $y_{1:t}$
+\end_inset
+
+.
+ In other words, we will compute the filtering distribution 
+\begin_inset Formula $p(x_{t}|y_{1:t})$
+\end_inset
+
+ for 
+\begin_inset Formula $t=1,\dots,T$
+\end_inset
+
+.
+ Because of the linear relationship between 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ and the normality of 
+\begin_inset Formula $\epsilon_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{t}$
+\end_inset
+
+, 
+\begin_inset Formula $p(x_{t}|y_{1:t})$
+\end_inset
+
+ is Gaussian, where the mean and variance are obtained from the Kalman filter
+ recursions.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Implement the Kalman filter.
+ For each 
+\begin_inset Formula $t=1,\dots,T$
+\end_inset
+
+, plot the point estimate 
+\begin_inset Formula $\mathrm{E}[x_{t}|y_{1:t}]$
+\end_inset
+
+ and a 0.95 probability interval for 
+\begin_inset Formula $x_{t}|y_{1:t}$
+\end_inset
+
+.
+ In the same graph, plot the true state 
+\begin_inset Formula $x_{t}$
+\end_inset
+
+ (that you simulated in (a)) and 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+.
+ Compare your filtering distribution to that obtained by the 
+\family typewriter
+DLM
+\family default
+ package using 
+\family typewriter
+dlmFilter
+\family default
+.
+ Notice that 
+\family typewriter
+dlmFilter
+\family default
+ does not return 
+\begin_inset Formula $\Sigma_{t}=\mathrm{V}[x_{t}|y_{1:t}]$
+\end_inset
+
+ but its Singular Value Decomposition (SVD) instead.
+ You can obtain 
+\begin_inset Formula $\Sigma_{t}$
+\end_inset
+
+ using the function 
+\family typewriter
+dlmSvd2var
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Prediction of state and data by simulation
+\series default
+.
+ We first note that both the predictive distribution for the state and the
+ data are analytically available for the linear Gaussian state space model.
+ We will here approach it by simulation to get a good intuition about the
+ uncertainties involved when simulating the data and the states.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Suppose we want to predict future values of the process 
+\begin_inset Formula $y_{T+k}$
+\end_inset
+
+ conditional on 
+\begin_inset Formula $y_{1:T}$
+\end_inset
+
+.
+ It is easy to show that (convince yourself, but no need to include in the
+ report) 
+\begin_inset Formula 
+\begin{eqnarray}
+p(y_{T+k}|y_{1:T}) & = & \int p(y_{T+k},x_{T+k}|y_{1:T})dx_{T+k}\nonumber \\
+ & = & \int p(y_{T+k}|x_{T+k},y_{1:T})p(x_{T+k}|y_{1:T})dx_{T+k}\nonumber \\
+ & = & \int p(y_{T+k}|x_{T+k})p(x_{T+k}|y_{1:T})dx_{T+k},\label{eq:prediction}
+\end{eqnarray}
+
+\end_inset
+
+where the last equality follows from conditional independence in a general
+ state space model (inspect the graphical model!).
+ A fact that was often stressed during the course in Bayesian learning is
+ that Bayes is all about averaging functions (here 
+\begin_inset Formula $p(y_{T+k}|x_{T+k})$
+\end_inset
+
+) with respect to posterior uncertainty (here represented by 
+\begin_inset Formula $p(x_{T+k}|y_{1:T})$
+\end_inset
+
+): notice that Equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:prediction"
+
+\end_inset
+
+ is nothing but 
+\begin_inset Formula 
+\[
+\mathrm{E}_{x_{T+k}|y_{1:T}}[p(y_{T+k}|x_{T+k})].
+\]
+
+\end_inset
+
+To simulate from 
+\begin_inset Formula $p(y_{T+k}|y_{1:T})$
+\end_inset
+
+ we can sample 
+\begin_inset Formula 
+\begin{eqnarray*}
+x_{T+k}^{(i)} & \sim & p(x_{T+k}|y_{1:T})\\
+y_{T+k}^{(i)} & \sim & p(y_{T+k}|x_{T+k}^{(i)}).
+\end{eqnarray*}
+
+\end_inset
+
+We note that the first step requires to simulate the state at 
+\begin_inset Formula $t=T+k$
+\end_inset
+
+ conditional on 
+\begin_inset Formula $y_{1:T}$
+\end_inset
+
+.
+ It is easy to show that 
+\begin_inset Formula 
+\begin{eqnarray*}
+p(x_{T+k}|y_{1:T}) & = & \int p(x_{T+k}|x_{T+k-1})p(x_{T+k-1}|y_{1:T})dx_{T+k-1}.
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Your task is to use simulation and compute 0.95 probability intervals for
+ 
+\begin_inset Formula $x_{T+k}|y_{1:T}$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{T+k}|y_{1:T}$
+\end_inset
+
+ for 
+\begin_inset Formula $k=1,2,3,4,5$
+\end_inset
+
+.
+ 
+\series bold
+Hint:
+\series default
+ Start with 
+\begin_inset Formula $k=1$
+\end_inset
+
+ and note that 
+\begin_inset Formula $p(x_{T+k-1}|y_{1:T})=p(x_{T}|y_{1:T})$
+\end_inset
+
+ which you can obtain from the Kalman filter.
+ You can then easily simulate 
+\begin_inset Formula $x_{T+k}|y_{1:T}$
+\end_inset
+
+ recursively, starting from 
+\begin_inset Formula $k=1$
+\end_inset
+
+ and, for each 
+\begin_inset Formula $k$
+\end_inset
+
+, you can easily obtain a sample from 
+\begin_inset Formula $y_{T+k}|y_{1:T}$
+\end_inset
+
+ as explained above.
+ This gives you one realization of 
+\begin_inset Formula $y_{T+1}|y_{1:T},\dots,y_{T+5}|y_{1:T}$
+\end_inset
+
+ (5 future observations) which you then repeat for a desired number of samples.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Plot the estimated probability intervals in a time-extended plot that also
+ includes the true state, the filtered state (with probability intervals)
+ and the observations, see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:prediction_state_data"
+
+\end_inset
+
+ for an example.
+ The function 
+\family typewriter
+dlmForecast
+\family default
+ can be used to check your results.
+ 
+\begin_inset Float figure
+placement h!
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename PredictedStateAndData.png
+	width 70text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Example of the requested plot (with 
+\begin_inset Formula $k=20$
+\end_inset
+
+).
+ True state (black), estimated state (red, filtered for 
+\begin_inset Formula $1\leq t\leq100$
+\end_inset
+
+ and predicted for 
+\begin_inset Formula $t\geq101$
+\end_inset
+
+, dotted denotes probability intervals), observations (blue) and probability
+ intervals for predicted distribution 
+\begin_inset Formula $p(y_{T+k}|y_{1:T})$
+\end_inset
+
+ (dotted blue).
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:prediction_state_data"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+State and model parameter inference
+\series default
+.
+ Up to now we have assumed that all model parameters are known and the task
+ has been to estimate the state vector.
+ We now also let the model parameters be unknown and estimate them together
+ with the states from data.
+ For simplicity we assume known variances in both the observation and state
+ equation, but we remark that it is in principle straightforward to estimate
+ them.
+ Thus our model is 
+\begin_inset Formula 
+\begin{equation}
+\begin{split}y_{t} & =\theta x_{t}+\epsilon_{t},\quad\epsilon_{t}\sim\mathcal{N}(0,\Omega_{\epsilon}=0.5)\\
+x_{t} & =x_{t-1}+v_{t},\quad v_{t}\sim\mathcal{N}(0,\Omega_{v}=0.1)~(v_{t}\indep\epsilon_{t}),\quad x_{0}\sim\mathcal{N}(\mu_{0}=0,\Sigma_{0}=10),
+\end{split}
+\label{eqn:scalarmodelunknowntheta}
+\end{equation}
+
+\end_inset
+
+and since we are Bayesians we also need a prior for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ which we turn to in a short while.
+ The posterior is now 
+\begin_inset Formula $p(\theta,x_{1:T}|y_{1:T})$
+\end_inset
+
+ and we can use Gibbs sampling to explore it by simulation as follows.
+ Initialize 
+\begin_inset Formula $\theta^{(0)}$
+\end_inset
+
+ and, for 
+\begin_inset Formula $i=1,\dots,N$
+\end_inset
+
+, repeat
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item[(i)] $x_{1:T}^{(i)} 
+\backslash
+sim p(x_{1:T}| 
+\backslash
+theta^{(i-1)}, y_{1:T})$
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+item[(ii)] $
+\backslash
+theta^{(i)} 
+\backslash
+sim p(
+\backslash
+theta| x^{(i)}_{1:T}, y_{1:T})$.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Step (i) can be solved by Forward Filtering and Backward Sampling (FFBS),
+ which in turn requires the Kalman Filter that you implemented earlier.
+ The backward sampling use the mean and variance of 
+\begin_inset Formula $p(x_{t+1}|y_{1:t})$
+\end_inset
+
+ (
+\begin_inset Formula $\bar{\mu}_{t+1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{\Sigma}_{t+1}$
+\end_inset
+
+) that you already computed with the Kalman Filter and can thus be reused
+ for computational efficiency.
+ Note that you have to run the Kalman Filter (and the backward sampling)
+ for every new 
+\begin_inset Formula $\theta$
+\end_inset
+
+! Step (ii) is easy to sample by noting that, once we condition on the simulated
+ states from Step (i), the model for 
+\begin_inset Formula $y_{t}$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eqn:scalarmodelunknowntheta"
+
+\end_inset
+
+ is an ordinary regression model with unknown slope but known variance.
+ A normal prior for 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is conjugate for this model, so that the full conditional 
+\begin_inset Formula $p(\theta|x_{1:T},y_{1_{T}})$
+\end_inset
+
+ is also normal (with updated mean and variance).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+Implement a Gibbs sampler that samples from 
+\begin_inset Formula $p(\theta,x_{1:T}|y_{1:T})$
+\end_inset
+
+ following the instructions above.
+ Take the vague prior 
+\begin_inset Formula $p(\theta)=\mathcal{N}(0,100)$
+\end_inset
+
+.
+ Implement your own FFBS and, to check that it is correct, you can compare
+ to 
+\family typewriter
+dlmBSample
+\family default
+.
+ 
+\series bold
+Warning
+\series default
+: For some starting values of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ you can run into numerical problems as the Kalman filter can become numerically
+ which our implementation, as already noticed, does not take into account.
+ Change starting values and try again.
+ I found that this problem can arise with a negative starting value or a
+ very small one.
+ Plot the posterior 
+\begin_inset Formula $p(\theta|y_{1:T})$
+\end_inset
+
+ using e.g.
+ a histogram or a kernel density estimate (don't forget to discard burn-in).
+ Can you estimate 
+\begin_inset Formula $\theta$
+\end_inset
+
+ accurately (recall that the true value is 0.93)?
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Regression with time-varying parameters
+\series default
+.
+ The Capital Asset Pricing Model (CAPM) is useful for determining the risk
+ of an asset.
+ Let 
+\begin_inset Formula $y_{t}=r_{t}-r_{t}^{f}$
+\end_inset
+
+, where 
+\begin_inset Formula $r_{t}$
+\end_inset
+
+ is the return of the asset of interest at time 
+\begin_inset Formula $t$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{t}^{f}$
+\end_inset
+
+ is the return of a risk-free asset (e.g.
+ a bond).
+ Likewise, 
+\begin_inset Formula $z_{t}=r_{t}^{M}-r_{t}^{f}$
+\end_inset
+
+ is the excess return at time 
+\begin_inset Formula $t$
+\end_inset
+
+ but for the market portfolio with return 
+\begin_inset Formula $r_{t}^{M}$
+\end_inset
+
+.
+ The CAPM model assumes that 
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{t} & = & \alpha+\beta z_{t}+\epsilon_{t},\quad\epsilon_{t}\sim\mathcal{N}(0,\sigma_{\epsilon}^{2}).
+\end{eqnarray*}
+
+\end_inset
+
+The parameter 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ captures the excess returns not explained by 
+\begin_inset Formula $z_{t}$
+\end_inset
+
+.
+ The main parameter 
+\begin_inset Formula $\beta$
+\end_inset
+
+ measures the sensitivity of the asset w.r.t changes in the market: 
+\begin_inset Formula $\beta>1$
+\end_inset
+
+ (
+\begin_inset Formula $<1$
+\end_inset
+
+) amplifies (dampens) changes in markets return and is considered an aggressive
+ (conservative) investment.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+The dynamic CAPM models both the "base"-return and sensitivity as time-varying.
+ We here consider the following dynamic model 
+\begin_inset Formula 
+\begin{eqnarray*}
+y_{t} & = & \alpha_{t}+z_{t}\beta_{t}+\epsilon_{t},\quad\epsilon_{t}\sim\mathcal{N}(0,\sigma_{\epsilon}^{2})\\
+\alpha_{t} & = & \alpha_{t-1}+v_{t}^{(1)},\quad v_{t}^{(1)}\sim\mathcal{N}(0,\sigma_{v^{(1)}}^{2})\quad p(\alpha_{0})=\mathcal{N}(0,100)\\
+\beta_{t} & = & \beta_{t-1}+v_{t}^{(2)},\quad v_{t}^{(2)}\sim\mathcal{N}(0,\sigma_{v^{(2)}}^{2})\quad p(\beta_{0})=\mathcal{N}(1,0.5)\text{ and }\epsilon_{t}\indep v_{t}^{(1)}\indep v_{t}^{(2)}.
+\end{eqnarray*}
+
+\end_inset
+
+Note that we have a vector of states 
+\begin_inset Formula $x_{t}=(\alpha_{t},\beta_{t})$
+\end_inset
+
+ and, in contrast to the previous problem, the system matrix 
+\begin_inset Formula $C$
+\end_inset
+
+ of the observation equation is time-dependent (here 
+\begin_inset Formula $C=z_{t}$
+\end_inset
+
+).
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+-
+\backslash
+phantom{--}$
+\end_layout
+
+\end_inset
+
+You will use the data set 
+\family typewriter
+CAPM_data.Rda
+\family default
+ to estimate the model.
+ The variables of interest in the data set are 
+\begin_inset Formula $r_{t}^{f}=\mathrm{RKFREE}$
+\end_inset
+
+, 
+\begin_inset Formula $r_{t}^{M}=\mathrm{MARKET}$
+\end_inset
+
+ and 
+\begin_inset Formula $r_{t}=\mathrm{IBM}$
+\end_inset
+
+.
+ The frequency of the data is monthly, from January 1978 to December 1987,
+ a total of 
+\begin_inset Formula $T=120$
+\end_inset
+
+ data points.
+ Use the 
+\family typewriter
+DLM
+\family default
+ package in 
+\begin_inset Formula $R$
+\end_inset
+
+ to solve the filtering, smoothing and backward sampling problems in this
+ exercise (your code from above cannot have a time-varying system matrix).
+ In the 
+\family typewriter
+DLM
+\family default
+ package, a time-varying system matrix 
+\begin_inset Formula $z_{t}$
+\end_inset
+
+ can be incorporated using the 
+\family typewriter
+JFF
+\family default
+ input to the 
+\family typewriter
+dlm
+\family default
+ function, see the help.
+ As an alternative, the function 
+\family typewriter
+dlmModReg
+\family default
+ allows you to specify a regression model with time-varying parameters directly.
+ However, 
+\series bold
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{red}
+\end_layout
+
+\end_inset
+
+do not
+\series default
+ use 
+\family typewriter
+dlmModReg
+\family default
+.
+ Learning how to use the 
+\family typewriter
+dlm
+\family default
+ function with time-varying system matrices is a good exercise as it allows
+ you to treat far more general models.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Estimating the variance components by MLE.
+
+\series default
+ Find the Maximum Likelihood Estimate (MLE) of 
+\begin_inset Formula $\sigma_{\epsilon}^{2},\sigma_{v^{(1)}}^{2},\sigma_{v^{(2)}}^{2}$
+\end_inset
+
+ (using the 
+\family typewriter
+DLM
+\family default
+ package).
+ For problems (b.)-(c.) you will use the MLE values obtain here.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Filtering and smoothing
+\series default
+.
+ Compute the filtering and smoothing distribution, respectively.
+ In both cases, plot the result for both 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ (on separate graphs), together with 0.95 probability intervals.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Average sensitivity pre and post 1982 - a retrospective analysis
+\series default
+.
+ Do a retrospective analysis of the average sensitivity before and after
+ year 1982 (year 1982 starts at 
+\begin_inset Formula $t=49$
+\end_inset
+
+).
+ Did the average sensitivity increase after 1982? Motivate your answer.
+ 
+\series bold
+Hints:
+\series default
+ (i) recall that retrospective conditions on all available data and (ii)
+ think like a Bayesian!
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Bayesian inference for the variance components.
+ 
+\series default
+Describe in detail how you would do Bayesian inference on the variance component
+s.
+ No need to implement it, but clearly motivate your answer.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+Good luck!
+\end_layout
+
+\end_body
+\end_document
