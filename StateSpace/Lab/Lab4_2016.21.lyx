@@ -1,4 +1,4 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 474
 \begin_document
 \begin_header
@@ -97,7 +97,7 @@
 \align left
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="right" valignment="top">
@@ -240,7 +240,7 @@ Matias Quiroz and Mattias Villani
 \align left
 \begin_inset Tabular
 <lyxtabular version="3" rows="11" columns="2">
-<features tabularvalignment="middle">
+<features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <row>
@@ -541,7 +541,7 @@ where
 \begin_inset Formula $u_{t}\in\mathbb{R}^{n_{u}\times1}$
 \end_inset
 
- it the control vector for 
+ is the control vector for 
 \begin_inset Formula $x_{t}$
 \end_inset
 
@@ -632,7 +632,6 @@ DLM
  This ensures that your code works properly, but more important it gives
  you a good practice for the computer exam.
 \end_layout
-
 
 \begin_deeper
 \begin_layout Enumerate
@@ -1561,7 +1560,6 @@ dlm
  you to treat far more general models.
 \end_layout
 
-
 \begin_deeper
 \begin_layout Enumerate
 
@@ -1578,7 +1576,7 @@ Estimating the variance components by MLE.
 DLM
 \family default
  package).
- For problems (b.)-(c.) you will use the MLE values obtain here.
+ For problems (b)-(c) you will use the MLE values obtain here.
 \end_layout
 
 \begin_layout Enumerate
