@@ -803,11 +803,11 @@ GP: add the 0-1 coded covariate and use ARD kernel:
 \end_inset
 
 So the covariance between 
-\begin_inset Formula $\left(x_{1},0\right)$
+\begin_inset Formula $f\left(x_{1},0\right)$
 \end_inset
 
  and 
-\begin_inset Formula $\left(x_{1},1\right)$
+\begin_inset Formula $f\left(x_{1},1\right)$
 \end_inset
 
  is

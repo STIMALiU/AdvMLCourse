@@ -30,7 +30,7 @@ dlmLocalTrend <- dlm(m0 = m0,C0 = C0, FF = FF, GG = GG, V = V, W = W)
 dlmKFfilt <- dlmFilter(y = Nile, dlmLocalTrend)
 
 # Plotting the sum of the filtered states
-lines(seq(1,nTraining), dlmKFfilt$a[,1] + dlmKFfilt$a[,2], col = "red", lwd = 2)
+lines(seq(1,nTraining), dlmKFfilt$m[2:(nTraining+1),1] + dlmKFfilt$m[2:(nTraining+1),2], col = "red", lwd = 2)
 
 # Plotting the predicted response, y
 lines(seq(1,nTraining), dlmKFfilt$f, col = "green", lwd = 2)
@@ -45,7 +45,7 @@ plot(Nile, ylab = "Flow of Nile", lwd = 2, xlab = 'year',
 lines(seq(1,nTraining), Nile, lwd = 2)
 
 # Plotting the sum of the filtered states
-lines(seq(1,nTraining), dlmKFfilt$a[,1] + dlmKFfilt$a[,2], col = "red", lwd = 2)
+lines(seq(1,nTraining), dlmKFfilt$m[2:(nTraining+1),1] + dlmKFfilt$m[2:(nTraining+1),2], col = "red", lwd = 2)
 
 # Plotting the sum of the smoothed states. Note that dlmSmoothed$s[1,] is theta at time t=0
 lines(seq(1,nTraining), dlmSmoothed$s[2:(nTraining+1),1] + dlmSmoothed$s[2:(nTraining+1),2], col = "blue", lwd = 2)
@@ -88,7 +88,7 @@ lines(seq(1,nTraining), Nile, lwd = 2)
 dlmKFfilt <- dlmFilter(y = Nile, dlmWithMLEs)
 
 # Plotting the sum of the filtered states
-lines(seq(1,nTraining), dlmKFfilt$a[,1] + dlmKFfilt$a[,2], col = "red", lwd = 2)
+lines(seq(1,nTraining), dlmKFfilt$m[2:(nTraining+1),1] + dlmKFfilt$m[2:(nTraining+1),2], col = "red", lwd = 2)
 
 # State smoothing
 dlmSmoothed <- dlmSmooth(y = Nile, dlmWithMLEs)
@@ -120,3 +120,4 @@ for (i in 1:3){
 
 # Plotting the marginal posterior of the state at time t
 hist(postDraws[50,,1], 40)
+

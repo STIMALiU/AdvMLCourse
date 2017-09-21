@@ -756,7 +756,7 @@ ExtendedKalmanFilter
 \begin_deeper
 \begin_layout Itemize
 \begin_inset Formula $\text{Prediction update: }\;\;\;\;\,\;\begin{cases}
-\bar{\mu}_{t}=g(\mathbf{x}_{t-1},\mathbf{u}_{t})\\
+\bar{\mu}_{t}=g(\mathbf{\mu}_{t-1},\mathbf{u}_{t})\\
 \bar{\Sigma}_{t}=\mathbf{G}_{t}\Sigma_{t-1}\mathbf{G}_{t}^{T}+\Omega_{\nu}
 \end{cases}$
 \end_inset
@@ -859,7 +859,7 @@ The
 \series default
  
 \series bold
-state-space (LGSS) mode
+state-space model
 \series default
 
 \begin_inset Formula 
@@ -881,7 +881,7 @@ Poisson with time-varying intensity
 
 \begin_inset Formula 
 \begin{align*}
-y_{t}\vert x_{t} & \sim\mathrm{Pois}(x_{t})\\
+y_{t}\vert x_{t} & \sim\mathrm{Pois}(\exp\left(x_{t}\right))\\
 x_{t}\vert x_{t-1} & \sim N\left(x_{t-1},\omega_{\nu}^{2}\right)
 \end{align*}
 
@@ -1000,7 +1000,7 @@ ParticleFilter
 \begin_inset Formula $\text{  }\begin{cases}
 \text{for }m=1\text{ to }M\text{ do}\\
 \quad\text{draw }i\text{ with probability \propto}w_{t}^{(i)} & \text{\textbf{Measurement/resampling update}}\\
-\quad\text{append }x_{t}^{(i)}\text{ to }\bar{\mathcal{X}_{t}}\\
+\quad\text{append }x_{t}^{(i)}\text{ to \mathcal{X}}_{t}\\
 \text{end}
 \end{cases}$
 \end_inset
