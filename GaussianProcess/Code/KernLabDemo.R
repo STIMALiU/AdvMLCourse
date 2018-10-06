@@ -22,7 +22,7 @@ library(AtmRay)
 X <- matrix(rnorm(12), 4, 3)
 Xstar <- matrix(rnorm(15), 5, 3)
 ell <- 1
-SEkernel <- rbfdot(sigma = 1/(2*ell^2)) # Note how I reparametrize the rbfdo (which is the SE kernel) in kernlab
+SEkernel <- rbfdot(sigma = 1/(2*ell^2)) # Note how I reparametrize the rbfdot (which is the SE kernel) in kernlab
 SEkernel(1,2) # Just a test - evaluating the kernel in the points x=1 and x'=2
 # Computing the whole covariance matrix K from the kernel. Just a test.
 K <- kernelMatrix(kernel = SEkernel, x = X, y = Xstar) # So this is K(X,Xstar)
@@ -164,3 +164,43 @@ points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red", cex=10, 
 points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue",  cex=10, pch=".")
 points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green",  cex=10, pch=".")
 
+##########################################
+# Author: Jose M. Peña, jose.m.pena@liu.se
+# GP regression on the canadian wages data
+##########################################
+
+library(kernlab)
+CWData <- read.table('https://raw.githubusercontent.com/STIMALiU/AdvMLCourse/master/GaussianProcess/Code/CanadianWages.dat', 
+                     header = T)
+logWage<-CWData$logWage
+age<-CWData$age
+age<-(age-mean(age))/sd(age) # Standarize the age
+
+# Estimating the noise variance from a third degree polynomial fit
+polyFit <- lm(logWage ~  age + I(age^2) + I(age^3))
+sigmaNoise = sd(polyFit$residuals)
+
+plot(age,logWage)
+
+# Fit the GP with built-in square expontial kernel (called rbfdot in kernlab)
+ell <- 0.2
+SEkernel <- rbfdot(sigma = 1/(2*ell^2)) # Note the reparametrization
+GPfit <- gausspr(age,logWage, kernel = SEkernel, var = sigmaNoise^2)
+meanPred <- predict(GPfit, age) # Predicting the training data
+lines(age, meanPred, col="blue", lwd = 2)
+
+x<-age
+xs<-age # XStar
+n <- length(x)
+Kss <- kernelMatrix(kernel = SEkernel, x = xs, y = xs)
+Kxx <- kernelMatrix(kernel = SEkernel, x = x, y = x)
+Kxs <- kernelMatrix(kernel = SEkernel, x = x, y = xs)
+Covf = Kss-t(Kxs)%*%solve(Kxx + sigmaNoise^2*diag(n), Kxs) # Covariance matrix of fStar
+
+# Probability intervals for fStar
+lines(xs, meanPred - 1.96*sqrt(diag(Covf)), col = "red")
+lines(xs, meanPred + 1.96*sqrt(diag(Covf)), col = "red")
+
+# Prediction intervals for yStar
+lines(xs, meanPred - 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "purple")
+lines(xs, meanPred + 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "purple")
