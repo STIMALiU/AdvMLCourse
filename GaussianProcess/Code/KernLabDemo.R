@@ -139,26 +139,26 @@ names(gridPoints) <- names(iris)[3:4]
 probPreds <- predict(GPfitIris, gridPoints, type="probabilities")
 
 # Plotting for Prob(setosa)
-contour(x1,x2,matrix(probPreds[,1],100), 20, xlab = "Petal.Length", ylab = "Petal.Width", main = 'Prob(Setosa) - Setosa is red')
+contour(x1,x2,matrix(probPreds[,1],100,byrow = TRUE), 20, xlab = "Petal.Length", ylab = "Petal.Width", main = 'Prob(Setosa) - Setosa is red')
 points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red")
 points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue")
 points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green")
 
 # Plotting for Prob(Versicolor)
-contour(x1,x2,matrix(probPreds[,2],100), 20, xlab = "Petal.Length", ylab = "Petal.Width", main = 'Prob(Versicolor) - Versicolor is green')
+contour(x1,x2,matrix(probPreds[,2],100,byrow = TRUE), 20, xlab = "Petal.Length", ylab = "Petal.Width", main = 'Prob(Versicolor) - Versicolor is green')
 points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red")
 points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue")
 points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green")
 
 
 # Plotting for Prob(virginica)
-contour(x1,x2,matrix(probPreds[,3],100), 20, xlab = "Petal.Length", ylab = "Petal.Width", main = 'Prob(Virginica) - Virginica is blue')
+contour(x1,x2,matrix(probPreds[,3],100,byrow = TRUE), 20, xlab = "Petal.Length", ylab = "Petal.Width", main = 'Prob(Virginica) - Virginica is blue')
 points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red")
 points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue")
 points(iris[iris[,5]=='versicolor',3],iris[iris[,5]=='versicolor',4],col="green")
 
 # Plotting the decision boundaries
-meanPred <- matrix(max.col(probPreds),100)
+meanPred <- matrix(max.col(probPreds),100,byrow = TRUE)
 plot(gridPoints,  pch=".", cex=3, col=ifelse(meanPred==1, "red", ifelse(meanPred==2, "green", "blue")))
 points(iris[iris[,5]=='setosa',3],iris[iris[,5]=='setosa',4],col="red", cex=10, pch=".")
 points(iris[iris[,5]=='virginica',3],iris[iris[,5]=='virginica',4],col="blue",  cex=10, pch=".")
