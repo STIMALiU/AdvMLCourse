@@ -183,12 +183,21 @@ sigmaNoise = sd(polyFit$residuals)
 plot(age,logWage)
 
 # Fit the GP with built-in square expontial kernel (called rbfdot in kernlab)
-ell <- 0.2
+ell <- 0.5
 SEkernel <- rbfdot(sigma = 1/(2*ell^2)) # Note the reparametrization
 GPfit <- gausspr(age,logWage, kernel = SEkernel, var = sigmaNoise^2)
 meanPred <- predict(GPfit, age) # Predicting the training data
-lines(age, meanPred, col="blue", lwd = 2)
+lines(age, meanPred, col="red", lwd = 2)
 
+# The implementation of kernlab for the probability and prediction intervals seem to have a bug: The intervals
+# seem to be too wide, e.g. replace 1.96 with 0.1 to see something.
+# GPfit <- gausspr(age,logWage, kernel = SEkernel, var = sigmaNoise^2, variance.model = TRUE)
+# meanPred <- predict(GPfit, age)
+# lines(age, meanPred, col="red", lwd = 2)
+# lines(age, meanPred+1.96*predict(GPfit,age, type="sdeviation"),col="blue")
+# lines(age, meanPred-1.96*predict(GPfit,age, type="sdeviation"),col="blue")
+
+# Probability and prediction interval implementation.
 x<-age
 xs<-age # XStar
 n <- length(x)
@@ -198,9 +207,9 @@ Kxs <- kernelMatrix(kernel = SEkernel, x = x, y = xs)
 Covf = Kss-t(Kxs)%*%solve(Kxx + sigmaNoise^2*diag(n), Kxs) # Covariance matrix of fStar
 
 # Probability intervals for fStar
-lines(xs, meanPred - 1.96*sqrt(diag(Covf)), col = "red")
-lines(xs, meanPred + 1.96*sqrt(diag(Covf)), col = "red")
+lines(xs, meanPred - 1.96*sqrt(diag(Covf)), col = "blue", lwd = 2)
+lines(xs, meanPred + 1.96*sqrt(diag(Covf)), col = "blue", lwd = 2)
 
 # Prediction intervals for yStar
-lines(xs, meanPred - 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "purple")
-lines(xs, meanPred + 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "purple")
+lines(xs, meanPred - 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
+lines(xs, meanPred + 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
