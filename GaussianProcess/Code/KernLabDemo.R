@@ -176,10 +176,12 @@ logWage<-CWData$logWage
 age<-CWData$age
 age<-(age-mean(age))/sd(age) # Standarize the age
 
-# Estimating the noise variance from a third degree polynomial fit
+# Estimating the noise variance from a third degree polynomial fit. I() is needed because, otherwise
+# age^2 reduces to age in the formula, i.e. age^2 means adding the main effect and the second order
+# interaction, which in this case do not exist. See ?I.
 polyFit <- lm(logWage ~  age + I(age^2) + I(age^3))
 sigmaNoise = sd(polyFit$residuals)
-
+?I
 plot(age,logWage)
 
 # Fit the GP with built-in square expontial kernel (called rbfdot in kernlab)
