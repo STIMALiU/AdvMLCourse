@@ -181,7 +181,6 @@ age<-(age-mean(age))/sd(age) # Standarize the age
 # interaction, which in this case do not exist. See ?I.
 polyFit <- lm(logWage ~  age + I(age^2) + I(age^3))
 sigmaNoise = sd(polyFit$residuals)
-?I
 plot(age,logWage)
 
 # Fit the GP with built-in square expontial kernel (called rbfdot in kernlab)
