@@ -85,7 +85,7 @@ EpsilonGreedyPolicy <- function(x, y, epsilon){
   #
   # Args:
   #   x, y: state coordinates.
-  #   epsilon: probability of acting greedily.
+  #   epsilon: probability of acting randomly.
   # 
   # Returns:
   #   An action, i.e. integer in {1,2,3,4}.
