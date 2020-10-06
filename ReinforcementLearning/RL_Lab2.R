@@ -8,6 +8,9 @@
 
 # install.packages("keras")
 library(keras)
+# library(tensorflow) # You may also need to run this if you don't have an existing tensorflow installation.
+# install_tensorflow()
+# library(keras)
 
 # install.packages("ggplot2")
 # install.packages("vctrs")
