@@ -10,10 +10,7 @@
 # install.packages("vctrs")
 library(ggplot2)
 
-# If you do not see four arrows in line 16, then do the following:
-# File/Reopen with Encoding/UTF-8
-
-arrows <- c("↑", "→", "↓", "←")
+arrows <- c("^", ">", "v", "<")
 action_deltas <- list(c(1,0), # up
                       c(0,1), # right
                       c(-1,0), # down

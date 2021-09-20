@@ -1,4 +1,4 @@
-# By Jose M. Peña and Joel Oskarsson.
+# By Jose M. Pe�a and Joel Oskarsson.
 # For teaching purposes.
 # jose.m.pena@liu.se.
 
@@ -16,10 +16,7 @@ library(keras)
 # install.packages("vctrs")
 library(ggplot2)
 
-# If you do not see four arrows in line 19, then do the following:
-# File/Reopen with Encoding/UTF-8
-
-arrows <- c("↑", "→", "↓", "←")
+arrows <- c("^", ">", "v", "<")
 action_deltas <- list(c(1,0), # up
                       c(0,1), # right
                       c(-1,0), # down
