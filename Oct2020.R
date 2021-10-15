@@ -315,7 +315,7 @@ posteriorGP <- function(X,y,k,sigmaNoise,xStar){
   mu <- t(kStar)%*%a
   v <- solve(L,kStar)
   var <- k(xStar,xStar)-(t(v)%*%v)
-  logmar <- -0.5*(t(y)%*%a)-sum(diag(L))-(n/2)*log(2*pi)
+  logmar <- -0.5*(t(y)%*%a)-sum(log(diag(L)))-(n/2)*log(2*pi)
   return(list("mu"=mu,"var"=var,"logmar"=logmar))
 }
 
@@ -372,7 +372,7 @@ LM <- function(X,y,k,par){
   n <- length(y)
   L <- t(chol(k(X,X)+((par^2)*diag(n))))
   a <- solve(t(L),solve(L,y))
-  logmar <- -0.5*(t(y)%*%a)-sum(diag(L))-(n/2)*log(2*pi)
+  logmar <- -0.5*(t(y)%*%a)-sum(log(diag(L)))-(n/2)*log(2*pi)
   return(logmar)
 }
 

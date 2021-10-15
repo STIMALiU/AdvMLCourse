@@ -210,7 +210,7 @@ LM <- function(par=c(20,0.2),X,y,k,sigmaNoise){
   n <- length(y)
   L <- t(chol(k(par,X,X)+((sigmaNoise^2)*diag(n))))
   a <- solve(t(L),solve(L,y))
-  logmar <- -0.5*(t(y)%*%a)-sum(diag(L))-(n/2)*log(2*pi)
+  logmar <- -0.5*(t(y)%*%a)-sum(log(diag(L)))-(n/2)*log(2*pi)
   return(logmar)
 }
 
