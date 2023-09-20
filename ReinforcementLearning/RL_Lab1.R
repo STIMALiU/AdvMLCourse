@@ -122,7 +122,7 @@ q_learning <- function(start_state, epsilon = 0.5, alpha = 0.1, gamma = 0.95,
   # 
   # Args:
   #   start_state: array with two entries, describing the starting position of the agent.
-  #   epsilon (optional): probability of acting greedily.
+  #   epsilon (optional): probability of acting randomly.
   #   alpha (optional): learning rate.
   #   gamma (optional): discount factor.
   #   beta (optional): slipping factor.
