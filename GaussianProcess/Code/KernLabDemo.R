@@ -61,7 +61,8 @@ CWData <- read.table('https://raw.githubusercontent.com/STIMALiU/AdvMLCourse/mas
                      header = T)
 logWage<-CWData$logWage
 age<-CWData$age
-age<-(age-mean(age))/sd(age) # Standarize the age.
+age<-(age-mean(age))/sd(age) # Standarize the age, because kernlab does it internally.
+# So, we better do it to get the "right" sigmaNoise.
 
 # Estimating the noise variance from a third degree polynomial fit. I() is needed because, otherwise
 # age^2 reduces to age in the formula, i.e. age^2 means adding the main effect and the second order
