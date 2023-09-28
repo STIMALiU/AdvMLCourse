@@ -49,10 +49,10 @@ MaternFunc = Matern32(sigmaf = 1, ell = 2) # MaternFunc is a kernel FUNCTION.
 MaternFunc(c(1,1),c(2,2)) # Evaluating the kernel in x=c(1,1), x'=c(2,2).
 # Computing the whole covariance matrix K from the kernel.
 kernelMatrix(kernel = MaternFunc, x = X, y = Xstar) # So this is K(X,Xstar).
-
+# kernelMatrix(kernel = Matern32(1,2), x = X, y = Xstar) # Also works.
 
 ##########################################
-# Author: Jose M. Peña, jose.m.pena@liu.se
+# Author: Jose M. Pe?a, jose.m.pena@liu.se
 # GP regression on the canadian wages data
 ##########################################
 
@@ -61,8 +61,7 @@ CWData <- read.table('https://raw.githubusercontent.com/STIMALiU/AdvMLCourse/mas
                      header = T)
 logWage<-CWData$logWage
 age<-CWData$age
-age<-(age-mean(age))/sd(age) # Standarize the age, because kernlab does it internally.
-# So, we better do it to get the "right" sigmaNoise.
+
 
 # Estimating the noise variance from a third degree polynomial fit. I() is needed because, otherwise
 # age^2 reduces to age in the formula, i.e. age^2 means adding the main effect and the second order
@@ -85,6 +84,12 @@ lines(age, meanPred, col="red", lwd = 2)
 # lines(age, meanPred, col="red", lwd = 2)
 # lines(age, meanPred+1.96*predict(GPfit,age, type="sdeviation"),col="blue")
 # lines(age, meanPred-1.96*predict(GPfit,age, type="sdeviation"),col="blue")
+
+# Standarize the age, because gausspr does it by default (see help file).
+# Note that standarization does not affect sigmaNoise, i.e. it is the same in the original and standarized data.
+age<-(age-mean(age))/sd(age)
+plot(age,logWage)
+lines(age, meanPred, col="red", lwd = 2)
 
 # Probability and prediction interval implementation.
 x<-age
