@@ -9,10 +9,23 @@
 #############################################################################
 
 #install.packages('kernlab')
-#install.packages("AtmRay") # To make 2D grid like in Matlab's meshgrid.
+
+# Search "System Path" in Windows.
+# Go to "Environment Variables...".
+# Edit the system variable "Path".
+# Add the line "C:\Rtools\usr\bin".
+# Finally, run the following line here in RStudio:
+# write('PATH="${RTOOLS_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
+# Restart RStudio.
+
+# The AtmRay package is no longer available in CRAN. So, the following line does not work:
+# install.packages("AtmRay") # To make 2D grid like in Matlab's meshgrid.
+# Instead, download the latest version of it from the archive in https://cran.r-project.org/web/packages/AtmRay/index.html
+# In the "Tools" menu of Rstudio, choose "Install packages" and then install from archive.
+# Browse to select the downloaded file and install it.
+
 library(kernlab)
 library(AtmRay)
-
 
 ###############################################
 ###    Messin' around with kernels        #####
