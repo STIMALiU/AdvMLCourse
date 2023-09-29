@@ -10,12 +10,14 @@
 
 #install.packages('kernlab')
 
+# Install Rtools43 from https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html
+
 # Search "System Path" in Windows.
 # Go to "Environment Variables...".
 # Edit the system variable "Path".
-# Add the line "C:\Rtools\usr\bin".
+# Add the line "C:\Rtools43\usr\bin".
 # Finally, run the following line here in RStudio:
-# write('PATH="${RTOOLS_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
+# write('PATH="${RTOOLS43_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
 # Restart RStudio.
 
 # The AtmRay package is no longer available in CRAN. So, the following line does not work:
