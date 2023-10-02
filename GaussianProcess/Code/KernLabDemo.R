@@ -3,35 +3,12 @@
 ## Author: Mattias Villani, Linkoping University. http://mattiasvillani.com
 ##############################################################################################
 
-
-#############################################################################
-###    Prelims: Setting path and installing/loading packages            #####
-#############################################################################
-
-#install.packages('kernlab')
-
-# Install Rtools43 from https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html
-
-# Search "System Path" in Windows.
-# Go to "Environment Variables...".
-# Edit the system variable "Path".
-# Add the line "C:\Rtools43\usr\bin".
-# Finally, run the following line here in RStudio:
-# write('PATH="${RTOOLS43_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
-# Restart RStudio.
-
-# The AtmRay package is no longer available in CRAN. So, the following line does not work:
-# install.packages("AtmRay") # To make 2D grid like in Matlab's meshgrid.
-# Instead, download the latest version of it from the archive in https://cran.r-project.org/web/packages/AtmRay/index.html
-# In the "Tools" menu of Rstudio, choose "Install packages" and then install from archive.
-# Browse to select the downloaded file and install it.
-
-library(kernlab)
-library(AtmRay)
-
 ###############################################
 ###    Messin' around with kernels        #####
 ###############################################
+
+#install.packages('kernlab')
+library(kernlab)
 
 # This is just to test how one evaluates a kernel function
 # and how one computes the covariance matrix from a kernel function.
@@ -123,11 +100,11 @@ lines(xs, meanPred + 1.96*sqrt(diag(Covf)), col = "blue", lwd = 2)
 lines(xs, meanPred - 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
 lines(xs, meanPred + 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
 
-
 ###############################################
 ###      Regression on the LIDAR data       ###
 ###############################################
 
+library(kernlab)
 lidarData <- read.table('https://raw.githubusercontent.com/STIMALiU/AdvMLCourse/master/GaussianProcess/Code/LidarData', 
                         header = T)
 LogRatio <- lidarData$LogRatio
@@ -167,11 +144,32 @@ GPfit <- gausspr(Distance, LogRatio, kernel = Matern32, kpar = list(sigmaf = sig
 meanPred <- predict(GPfit, Distance)
 lines(Distance, meanPred, col="black", lwd = 2)
 
-
 ###############################################
 ####       Classification on Iris data      ###
 ###############################################
 
+# The AtmRay package is no longer available in CRAN. So, the following line does not work:
+# install.packages("AtmRay") # To make 2D grid like in Matlab's meshgrid.
+# Instead, download the latest version of it from the archive in https://cran.r-project.org/web/packages/AtmRay/index.html
+# In the "Tools" menu of Rstudio, choose "Install packages" and then install from archive.
+# Browse to select the downloaded file and install it.
+
+# The previous lines fail if you do not have the Rtools package already installed.
+# Then, install Rtools43 from https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html
+
+# Now, search "System Path" in Windows.
+# Go to "Environment Variables...".
+# Edit the system variable "Path".
+# Add the line "C:\Rtools43\usr\bin".
+# Finally, run the following line here in RStudio:
+# write('PATH="${RTOOLS43_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
+# Restart RStudio.
+
+# Finally, try installing the AtmRay package again as indicated above.
+
+library(AtmRay)
+
+library(kernlab)
 data(iris)
 GPfitIris <- gausspr(Species ~  Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data=iris)
 GPfitIris
