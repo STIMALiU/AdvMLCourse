@@ -44,7 +44,7 @@ transProbs=matrix(c(.9,.1,0,
                     .2,0,.8), nrow=length(States), ncol=length(States), byrow = TRUE)
 emissionProbs=matrix(c(.6,.4,
                        .3,.7,
-                       .3,.7), nrow=length(States), ncol=length(symbols), byrow = TRUE)
+                       .3,.7), nrow=length(States), ncol=length(Symbols), byrow = TRUE)
 startProbs=c(.5,.5,0)
 hmm=initHMM(States,Symbols,startProbs,transProbs,emissionProbs)
 simHMM(hmm,100)
