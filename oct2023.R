@@ -164,6 +164,9 @@ LocallyPeriodicSine <- function(par=c(1,1,1,1), x1, x2) {
 LocallyPeriodicSine(c(20,1,1000,365),c(1,182,365),c(1,182,365))
 
 # The further apart two points are in x values MODULE half-a-year, the less correlated their f values are.
+# Note that I used l_2=1000 while the exam says l_2=100. My original intention was to have l_2=1000 but
+# unfortunately I wrote l_2=100 in the exam. I will correct with l_2=100 then, in which case you do not see
+# the "module half-a-year" effect. That is a pity. My bad.
 
 LM(par=c(20,1,1000,365),X=time,y=temp,k=LocallyPeriodicSine,sigmaNoise=sigmaNoiseFit)
 
