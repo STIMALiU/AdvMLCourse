@@ -40,7 +40,7 @@ set.seed(567)
 States=1:3 # healthy, sick1, sick2
 Symbols=1:2 #healthy, sick
 transProbs=matrix(c(.9,.1,0,
-                    0,0,1,
+                    0,.8,.2,
                     .2,0,.8), nrow=length(States), ncol=length(States), byrow = TRUE)
 emissionProbs=matrix(c(.6,.4,
                        .3,.7,
