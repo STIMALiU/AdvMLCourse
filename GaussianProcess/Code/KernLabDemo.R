@@ -54,7 +54,6 @@ CWData <- read.table('https://raw.githubusercontent.com/STIMALiU/AdvMLCourse/mas
 logWage<-CWData$logWage
 age<-CWData$age
 
-
 # Estimating the noise variance from a third degree polynomial fit. I() is needed because, otherwise
 # age^2 reduces to age in the formula, i.e. age^2 means adding the main effect and the second order
 # interaction, which in this case do not exist. See ?I.
@@ -63,42 +62,33 @@ sigmaNoise = sd(polyFit$residuals)
 plot(age,logWage)
 
 # Fit the GP with built-in square expontial kernel (called rbfdot in kernlab).
-ell <- 0.5
+ell <- 5
 SEkernel <- rbfdot(sigma = 1/(2*ell^2)) # Note the reparametrization.
-GPfit <- gausspr(age,logWage, kernel = SEkernel, var = sigmaNoise^2)
-meanPred <- predict(GPfit, age) # Predicting the training data.
+GPfit <- gausspr(age,logWage, kernel = SEkernel, var = sigmaNoise^2, variance.model = TRUE,scaled=FALSE)
+meanPred <- predict(GPfit, age)
 lines(age, meanPred, col="red", lwd = 2)
+lines(age, meanPred+1.96*predict(GPfit,age, type="sdeviation"),col="blue")
+lines(age, meanPred-1.96*predict(GPfit,age, type="sdeviation"),col="blue")
 
-# The implementation of kernlab for the probability and prediction intervals seem to have a bug: The intervals
-# seem to be too wide, e.g. replace 1.96 with 0.1 to see something.
-# GPfit <- gausspr(age,logWage, kernel = SEkernel, var = sigmaNoise^2, variance.model = TRUE)
-# meanPred <- predict(GPfit, age)
-# lines(age, meanPred, col="red", lwd = 2)
-# lines(age, meanPred+1.96*predict(GPfit,age, type="sdeviation"),col="blue")
-# lines(age, meanPred-1.96*predict(GPfit,age, type="sdeviation"),col="blue")
-
-# Standarize the age, because gausspr does it by default (see help file).
-# Note that standarization does not affect sigmaNoise, i.e. it is the same in the original and standarized data.
-age<-(age-mean(age))/sd(age)
-plot(age,logWage)
-lines(age, meanPred, col="red", lwd = 2)
-
-# Probability and prediction interval implementation.
+# Own GP implementation.
 x<-age
 xs<-age # XStar.
 n <- length(x)
 Kss <- kernelMatrix(kernel = SEkernel, x = xs, y = xs)
 Kxx <- kernelMatrix(kernel = SEkernel, x = x, y = x)
 Kxs <- kernelMatrix(kernel = SEkernel, x = x, y = xs)
+Meanf = t(Kxs)%*%solve(Kxx + sigmaNoise^2*diag(n), logWage)
 Covf = Kss-t(Kxs)%*%solve(Kxx + sigmaNoise^2*diag(n), Kxs) # Covariance matrix of fStar.
 
 # Probability intervals for fStar.
-lines(xs, meanPred - 1.96*sqrt(diag(Covf)), col = "blue", lwd = 2)
-lines(xs, meanPred + 1.96*sqrt(diag(Covf)), col = "blue", lwd = 2)
+plot(age,logWage)
+lines(age, Meanf, col="red", lwd = 2)
+lines(xs, Meanf - 1.96*sqrt(diag(Covf)), col = "blue", lwd = 2)
+lines(xs, Meanf + 1.96*sqrt(diag(Covf)), col = "blue", lwd = 2)
 
 # Prediction intervals for yStar.
-lines(xs, meanPred - 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
-lines(xs, meanPred + 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
+lines(xs, Meanf - 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
+lines(xs, Meanf + 1.96*sqrt((diag(Covf) + sigmaNoise^2)), col = "blue")
 
 ###############################################
 ###      Regression on the LIDAR data       ###
