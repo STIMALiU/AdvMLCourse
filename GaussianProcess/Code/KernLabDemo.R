@@ -138,27 +138,6 @@ lines(Distance, meanPred, col="black", lwd = 2)
 ####       Classification on Iris data      ###
 ###############################################
 
-# The AtmRay package is no longer available in CRAN. So, the following line does not work:
-# install.packages("AtmRay") # To make 2D grid like in Matlab's meshgrid.
-# Instead, download the latest version of it from the archive in https://cran.r-project.org/web/packages/AtmRay/index.html
-# In the "Tools" menu of Rstudio, choose "Install packages" and then install from archive.
-# Browse to select the downloaded file and install it.
-
-# The previous lines fail if you do not have the Rtools package already installed.
-# Then, install Rtools43 from https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html
-
-# Now, search "System Path" in Windows.
-# Go to "Environment Variables...".
-# Edit the system variable "Path".
-# Add the line "C:\Rtools43\usr\bin".
-# Finally, run the following line here in RStudio:
-# write('PATH="${RTOOLS43_HOME}\\usr\\bin;${PATH}"', file = "~/.Renviron", append = TRUE)
-# Restart RStudio.
-
-# Finally, try installing the AtmRay package again as indicated above.
-
-library(AtmRay)
-
 library(kernlab)
 data(iris)
 GPfitIris <- gausspr(Species ~  Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data=iris)
@@ -186,8 +165,11 @@ table(predict(GPfitIris,iris[,3:4]), iris[,5]) # confusion matrix
 probPreds <- predict(GPfitIris, iris[,3:4], type="probabilities")
 x1 <- seq(min(iris[,3]),max(iris[,3]),length=100)
 x2 <- seq(min(iris[,4]),max(iris[,4]),length=100)
-gridPoints <- meshgrid(x1, x2)
-gridPoints <- cbind(c(gridPoints$x), c(gridPoints$y))
+
+gridPoints <- matrix(NA,100*100,2)
+for(i in 1:100)
+  for(j in 1:100)
+    gridPoints[(i-1)*100+j,] <- c(x1[i],x2[j])
 
 gridPoints <- data.frame(gridPoints)
 names(gridPoints) <- names(iris)[3:4]
