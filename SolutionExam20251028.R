@@ -340,7 +340,7 @@ time = 1:length(temp)
 # Extract every 5:th observation
 subset <- seq(1, length(temp), by = 5)
 temp <- temp[subset]
-time = time[subset]
+time <- time[subset]
 plot(time,temp, type="l")
 
 SEKernel <- function(x1,x2){
@@ -380,11 +380,12 @@ lines(time, res$mu + 1.96*sqrt(diag(res$var)), col = "red", lwd = 4)
 x <- time
 xs <- time
 n <- length(x)
-z <- time[sample(1:length(time),100)]
+subset <- sample(1:length(time),100)
+z <- time[subset]
 
 sigmaF <- 20
 l <- 100
-polyFit <- lm(temp[z] ~  z + I(z^2))
+polyFit <- lm(temp[subset] ~  z + I(z^2))
 sigmaNoiseFit = sd(polyFit$residuals)
 
 Kxs <- SEKernel(x,xs)
